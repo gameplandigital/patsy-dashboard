@@ -111,6 +111,32 @@ $date=date('F j, Y g:i:a');
 
 <!-- END Monitoring -->
 
+<!-- GRAPH START --> 
+
+<?php
+$con  = mysqli_connect("patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com","patsydigital01","pAtsy06072018","patsy_db");
+ if (!$con) {
+     # code...
+    echo "Problem in database connection! Contact administrator!" . mysqli_error();
+ }else{
+         $sql ="SELECT count(id) as daily,LastActive as date FROM `air21_users` WHERE LastClicked = 'GET_STARTED' OR LastClicked = 'MENU_MAIN_MENU' GROUP BY day( date )";
+         $result = mysqli_query($con,$sql);
+         $chart_data="";
+         while ($row = mysqli_fetch_array($result)) { 
+ 
+            $productname[]  = $row['date']  ;
+            $sales[] = $row['daily'];
+        }
+ 
+ 
+ }
+ 
+ 
+?>
+
+
+
+<!-- GRAPH END -->
 
 
 <!doctype html>
@@ -332,34 +358,12 @@ $date=date('F j, Y g:i:a');
                                 </div>
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="tab-ctn">
-                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-                        <thead>
-                            <tr>
-                                <th>MessengerID</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Transaction Date</th>
-                                <th>Viewing</th>
-                    <!--            <th>Agent</th> -->
-                                <th>Update</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while($crow = mysqli_fetch_array($nquery)){
-                            ?>
-                            <tr class="odd gradeX">
-                                <td><?php echo $crow['MessengerId']; ?></td>
-                                <td><?php echo $crow['Fname']; ?></td>
-                                <td><?php echo $crow['Lname']; ?></td>
-                                <td><?php echo $crow['LastActive']; ?></td>
-                                <td><?php echo $crow['LastClicked']; ?></td>
-                                
-                                <!--  -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
+                                        
+                                   <div style="width:60%;hieght:20%;text-align:center">
+                                        <h2 class="page-header" >Analytics Reports </h2>
+                                        <div>Daily Users</div>
+                                        <canvas  id="chartjs_bar"></canvas> 
+                                    </div>     
 
 
                                     </div>
@@ -448,6 +452,47 @@ $date=date('F j, Y g:i:a');
     <!-- tawk chat JS
         ============================================ -->
     <script src="js/tawk-chat.js"></script>
+
+      <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script type="text/javascript">
+      var ctx = document.getElementById("chartjs_bar").getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels:<?php echo json_encode($productname); ?>,
+                        datasets: [{
+                            backgroundColor: [
+                               "#5969ff",
+                                "#ff407b",
+                                "#25d5f2",
+                                "#ffc750",
+                                "#2ec551",
+                                "#7040fa",
+                                "#ff004e"
+                            ],
+                            data:<?php echo json_encode($sales); ?>,
+                        }]
+                    },
+                    options: {
+                           legend: {
+                        display: true,
+                        position: 'bottom',
+ 
+                        labels: {
+                            fontColor: '#71748d',
+                            fontFamily: 'Circular Std Book',
+                            fontSize: 14,
+                        }
+                    },
+ 
+ 
+                }
+                });
+    </script>
+
+
+    
 </body>
 
 </html>
