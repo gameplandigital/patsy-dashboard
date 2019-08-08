@@ -424,8 +424,6 @@ $date=date('F j, Y g:i:a');
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
-                                <li><a data-toggle="tab" href="#menu1">Clients Meeted (Accounts)</a></li>
-                                <li><a data-toggle="tab" href="#menu2">Client Status</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active">
@@ -437,9 +435,9 @@ $date=date('F j, Y g:i:a');
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Transaction Date</th>
-                                <th>Viewing</th>
+                                <th>Currently Viewing</th>
                     <!--            <th>Agent</th> -->
-                                <th>Update</th>
+                            
                             </tr>
                         </thead>
                         <tbody>
@@ -517,8 +515,8 @@ $date=date('F j, Y g:i:a');
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="footer-copy-right">
-                        <p>Copyright © 2018 
-. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                        <p>Copyright © 2019 
+. All rights reserved. PATSY.</p>
                     </div>
                 </div>
             </div>
