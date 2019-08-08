@@ -182,7 +182,7 @@ $date=date('F j, Y g:i:a');
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                        <a href="#">PATSY</a>
+                      <!--   <a href="#"><img src="img/logo/logo.png" alt="" /></a> -->
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -266,9 +266,9 @@ $date=date('F j, Y g:i:a');
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                                <div class="breadcomb-report">
+                             <!--    <div class="breadcomb-report">
                                     <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
