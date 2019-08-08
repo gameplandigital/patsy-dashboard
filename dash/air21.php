@@ -290,6 +290,7 @@ $date=date('F j, Y g:i:a');
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
+                                <li><a data-toggle="tab" href="#menu1">Daily Users Total</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active">

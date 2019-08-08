@@ -28,7 +28,7 @@ $con  = mysqli_connect("patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com","
     <body>
         <div style="width:60%;hieght:20%;text-align:center">
             <h2 class="page-header" >Analytics Reports </h2>
-            <div>Product </div>
+            <div>Daily Users</div>
             <canvas  id="chartjs_bar"></canvas> 
         </div>    
     </body>
