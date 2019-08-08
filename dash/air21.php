@@ -30,7 +30,7 @@
   date_default_timezone_set("Asia/Manila");
 $date=date('F j, Y g:i:a');
 
-  $uquery=mysqli_query($conn,"SELECT * FROM `users` WHERE username='".$_SESSION['user']."'");
+  $uquery=mysqli_query($conn,"SELECT * FROM `login_users` WHERE username='".$_SESSION['user']."'");
   $urow=mysqli_fetch_assoc($uquery);
 ?>
 
