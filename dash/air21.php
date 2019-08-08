@@ -208,7 +208,7 @@ $con  = mysqli_connect("patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com","
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="logo-area">
-                      <!--   <a href="#"><img src="img/logo/logo.png" alt="" /></a> -->
+                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
