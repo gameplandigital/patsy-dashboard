@@ -2,7 +2,7 @@
  
 	include("conn.php");
  
-	$query=mysqli_query($conn,"select count(id) from `air21_users`");
+	$query=mysqli_query($conn,"SELECT count(id) FROM `air21_users`");
 	$row = mysqli_fetch_row($query);
  
 	$rows = $row[0];
@@ -30,8 +30,7 @@
  
 	$limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
  
-	$nquery=mysqli_query($conn,"SELECT * FROM air21_users ORDER by LastActive DESC 
- desc $limit");
+	$nquery=mysqli_query($conn,"SELECT * FROM air21_users ORDER BY LastActive DESC $limit");
  
 	$paginationCtrls = '';
  
