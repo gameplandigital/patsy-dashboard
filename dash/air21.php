@@ -1,7 +1,7 @@
 <?php
-	include("session.php");
+    include("session.php");
 
-	if(isset($_POST['search']))
+    if(isset($_POST['search']))
   {
     $valueToSearh = $_POST['valueToSearh']; 
     $query = "SELECT * FROM lead_users_unicare WHERE firstname LIKE '%".$valueToSearh."%' OR lastname LIKE '%".$valueToSearh."%' OR middlename LIKE '%".$valueToSearh."' OR status LIKE '%".$valueToSearh."%' OR agent LIKE '%".$valueToSearh."%'";
@@ -19,9 +19,9 @@
     $filter_result = mysqli_query($mysqli, $query);
     return $filter_result;
   }
-	
+    
 ?>
-<?php include('pagination-1.php'); ?>
+<?php include('pagination.php'); ?>
 
 <?php
 
@@ -34,335 +34,562 @@ $date=date('F j, Y g:i:a');
   $urow=mysqli_fetch_assoc($uquery);
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>AIRCAST | INTELESYSTEM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- styles -->
-    <link href="css/styles.css" rel="stylesheet">
-     <script src="public/3b-comments.js"></script>
-    <link href="public/3c-comments.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  	<div class="header">
-	     <div class="container">
-	        <div class="row">
-	           <div class="col-md-5">
-	              <!-- Logo -->
-	              <div class="logo">
-	                 <h1><a href="home.php"></a></h1>
-	              </div>
-	           </div>
-	           <div class="col-md-5">
-	              <div class="row">
-	                <div class="col-lg-12">
-	                  <div class="input-group form">
-	                       <input type="text" class="form-control" placeholder="Search...">
-	                       <span class="input-group-btn">
-	                         <button class="btn btn-primary" type="button">Search</button>
-	                       </span>
-	                  </div>
-	                </div>
-	              </div>
-	           </div>
-	           <div class="col-md-2">
-	              <div class="navbar navbar-inverse" role="banner">
-	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-	                    <ul class="nav navbar-nav">
-	                      <li class="dropdown">
-	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-	                        <ul class="dropdown-menu animated fadeInUp">
-	                          <li><a href="profile.php">Profile</a></li>
-	                          <li><a href="logout.php">Logout</a></li>
-	                        </ul>
-	                      </li>
-	                    </ul>
-	                  </nav>
-	              </div>
-	           </div>
-	        </div>
-	     </div>
-	</div>
 
-    <div class="page-content">
-    	<div class="row">
-		  <div class="col-md-2">
-		  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li class="current"><a href="home.php"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-                     <li><a href="lead_users.php"><i class="glyphicon glyphicon-list"></i>Lead Table</a></li>
-                    <li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i> Calendar</a></li>
-                   <!--  <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i> Statistics (Charts)</a></li> -->
-                   
-                   <!--  <li><a href="buttons.html"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>
-                    <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>
-                    <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li> -->
-                    <!-- <li class="submenu">
-                         <a href="#">
-                            <i class="glyphicon glyphicon-list"></i> Pages
-                            <span class="caret pull-right"></span>
-                         </a> -->
-                         <!-- Sub menu -->
-                         <!-- <ul>
-                            <li><a href="login.html">Login</a></li>
-                            <li><a href="signup.html">Signup</a></li>
+<!doctype html>
+<html class="no-js" lang="ca">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HOME | AIRCAST | TELEMARKETING</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon
+        ============================================ -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Google Fonts
+        ============================================ -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+    <!-- Bootstrap CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- font awesome CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- owl.carousel CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.transitions.css">
+    <!-- meanmenu CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/meanmenu/meanmenu.min.css">
+    <!-- Notika icon CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/notika-custom-icon.css">
+    <!-- mCustomScrollbar CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- animate CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- normalize CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- wave CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/wave/waves.min.css">
+    <link rel="stylesheet" href="css/wave/button.css">
+    <!-- main CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- style CSS
+        ============================================ -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS
+        ============================================ -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- modernizr JS
+        ============================================ -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Start Header Top Area -->
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="logo-area">
+                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="header-top-menu">
+                        <ul class="nav navbar-nav notika-top-nav">
+                            <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-search"></i></span></a>
+                                <div role="menu" class="dropdown-menu search-dd animated flipInX">
+                                    <div class="search-input">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" />
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-mail"></i></span></a>
+                                <div role="menu" class="dropdown-menu message-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Messages</h2>
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item nc-al"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-alarm"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>3</span></div></a>
+                                <div role="menu" class="dropdown-menu message-dd notification-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Notification</h2>
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Cum sociis natoque penatibus et magnis dis parturient montes</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-menus"></i></span><div class="spinner4 spinner-4"></div><div class="ntd-ctn"><span>2</span></div></a>
+                                <div role="menu" class="dropdown-menu message-dd task-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Tasks</h2>
+                                    </div>
+                                    <div class="hd-message-info hd-task-info">
+                                        <div class="skill">
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>HTML5 Validation Report</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="95%" style="width: 95%;" data-wow-duration="1.5s" data-wow-delay="1.2s"> <span>95%</span>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Google Chrome Extension</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="85%" style="width: 85%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>85%</span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Social Internet Projects</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>93%</span> </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="lead-content">
+                                                    <p>Bootstrap Admin Template</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>93%</span> </div>
+                                            </div>
+                                            <div class="progress progress-bt">
+                                                <div class="lead-content">
+                                                    <p>Youtube Client App</p>
+                                                </div>
+                                                <div class="progress-bar wow fadeInLeft" data-progress="93%" style="width: 93%;" data-wow-duration="1.5s" data-wow-delay="1.2s"><span>93%</span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><span><i class="notika-icon notika-chat"></i></span></a>
+                                <div role="menu" class="dropdown-menu message-dd chat-dd animated zoomIn">
+                                    <div class="hd-mg-tt">
+                                        <h2>Chat</h2>
+                                    </div>
+                                    <div class="search-people">
+                                        <i class="notika-icon notika-left-arrow"></i>
+                                        <input type="text" placeholder="Search People" />
+                                    </div>
+                                    <div class="hd-message-info">
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Jonathan Morris</h3>
+                                                    <p>Last seen 3 hours ago</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/4.jpg" alt="" />
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Fredric Mitchell</h3>
+                                                    <p>Last seen 2 minutes ago</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/1.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>David Belle</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="#">
+                                            <div class="hd-message-sn">
+                                                <div class="hd-message-img chat-img">
+                                                    <img src="img/post/2.jpg" alt="" />
+                                                    <div class="chat-avaible"><i class="notika-icon notika-dot"></i></div>
+                                                </div>
+                                                <div class="hd-mg-ctn">
+                                                    <h3>Glenn Jecobs</h3>
+                                                    <p>Available</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="hd-mg-va">
+                                        <a href="#">View All</a>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
-                    </li> -->
-                </ul>
-             </div>
-		  </div>
-		  <div class="col-md-10">
-	<!-- 	  	<div class="row">
-		  	
-		  	</div> -->
-
-		  	<div class="row">
-		  		<div class="col-md-12 panel-warning">
-		  			<div class="content-box-header panel-heading">
-	  					<div class="panel-title ">Welcome! <?php echo $urow['firstname']; ?></div>
-						
-						<div class="panel-options">
-							<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-							<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-						</div>
-		  			</div>
-		  			<div class="content-box-large box-with-header">
-			  			
-						<br /><br />
-					</div>
-		  		</div>
-		  	</div>
-
-
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="content-box-large">
-		  				<div class="panel-heading">
-							<div class="panel-title"></div>
-							
-							<div class="panel-options">
-								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
-								<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
-							</div>
-						</div>
-		  				<div class="panel-body">
-		  					<div id="rootwizard">
-								<div class="navbar">
-								  <div class="navbar-inner">
-								    <div class="container">
-								<ul class="nav nav-pills">
-								  	<li class="active"><a href="#tab1" data-toggle="tab">Aircast </a></li>
-									<li><a href="#tab2" data-toggle="tab">Aircast | Connect</a></li>
-									<li><a href="#tab3" data-toggle="tab">Book A Tech.</a></li>
-									<li><a href="#tab4" data-toggle="tab">Brainstorm</a></li>
-								</ul>
-								 </div>
-								  </div>
-								</div>
-								<div class="tab-content">
-								    <div class="tab-pane active" id="tab1">
-								        
-									<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Company Name</th>
-								<th>Contact Person</th>
-								<th>Contact Number</th>
-								<th>Company Location</th>
-								<th>Status</th>
-					<!-- 			<th>Agent</th> -->
-								<th>Update</th>
-								<th>Print CE</th>
-								<th>Book Tech.</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-							while($crow = mysqli_fetch_array($nquery)){
-							?>
-							<tr class="odd gradeX">
-								<td><?php echo $crow['id']; ?></td>
-								<td><?php echo $crow['firstname']; ?></td>
-								<td><?php echo $crow['middlename']; ?></td>
-								<td><?php echo $crow['lastname']; ?></td>
-								<td><?php echo $crow['c_location']; ?></td>
-								<td><?php echo $crow['status']; ?></td>
-								<!--  -->
-								<?php
-									echo "<td><a href='lead-edit.php?id=".$crow['firstname']."'><img src='./images/icons8-Edit-32.png' alt='Edit'></a></td>";
-									echo "<td><a href='lead_print.php?id=".$crow['firstname']."'><img src='./images/icons8-Print-32.png' alt='Script'></a></td>";
-									echo "<td><a href='book_tech.php?id=".$crow['firstname']."'><img src='./images/icons8-Print-32.png' alt='Script'></a></td>";
-								?>
-							</tr>
-					        <?php }	?>
-						</tbody>
-					</table>
-
-
-	
-								    	
-								    </div>
-
-								    <div class="tab-pane " id="tab2">
-
-								    	<h5>Aircast Wifi Leads</h5>
-
-								    </div>	
-
-
-								    <div class="tab-pane" id="tab3">
-
-								    	<h5>Book A Tech.</h5>
-
-								    	 <form class="form-horizontal" role="form" action="update_lead.php" method="POST">
-										  <div class="form-group">
-        
-        <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Name Of Employee:</label><div class="col-sm-10"> 
-		<input type="text" name="fname" placeholder="Name of Employee" class='form-control'></div></div>
-
-		<div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Name of Employee:</label><div class="col-sm-10"> 
-		<input type="text" name="fname" placeholder="Name of Employee" class='form-control'></div></div>
-		
-		<div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Enter Position:</label><div class="col-sm-10"> 
-		<input type="text" name="c_position" placeholder="Enter Position" class='form-control'></div></div>
-
-		<div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Company Name:</label><div class="col-sm-10"> 
-	    <input type="text" name="company" placeholder="Company Name" class='form-control'></div></div>	
-
-        <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Enter Department:</label><div class="col-sm-10"> 
-	    <input type="text" name="department" placeholder="Enter Department" class='form-control'></div></div>
-
-
-	    <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Date of Official Business:</label><div class="col-sm-10"> 
-	    <input type="date" name="business_date" class='form-control'>
-	    </div></div>
-
-
-	    <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">From ?</label><div class="col-sm-10"> 
-	    <input type="text" name="from" placeholder="from" class='form-control'>
-	    </div></div>
-
-	     <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">To ?</label><div class="col-sm-10"> 
-	    <input type="text" name="to" placeholder="to" class='form-control'>
-	    </div></div>
-         
-        <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Departure:</label><div class="col-sm-10">  
-	    <select name="departure">
-	    	<option value="9:00AM">9:00 AM</option>
-	    	<option value="10:00AM">10:00 AM</option>
-	    	<option value="11:00AM">11:00 AM</option>
-	    	<option value="12:00AM">12:00 AM</option>
-	    	<option value="1:00PM">1:00 PM</option>
-	    	<option value="2:00PM">2:00 PM</option>
-	    	<option value="3:00PM">3:00 PM</option>
-	    	<option value="4:00PM">4:00 PM</option>
-	    	<option value="5:00PM">5:00 PM</option>
-	    	<option value="6:00PM">6:00 PM</option>
-	     </select>
-	    </div>
-	   </div>
-	   
-        <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">Return:</label><div class="col-sm-10">  
-	     <select name="return">
-	    	<option value="9:00AM">9:00 AM</option>
-	    	<option value="10:00AM">10:00 AM</option>
-	    	<option value="11:00AM">11:00 AM</option>
-	    	<option value="12:00AM">12:00 AM</option>
-	    	<option value="1:00PM">1:00 PM</option>
-	    	<option value="2:00PM">2:00 PM</option>
-	    	<option value="3:00PM">3:00 PM</option>
-	    	<option value="4:00PM">4:00 PM</option>
-	    	<option value="5:00PM">5:00 PM</option>
-	    	<option value="6:00PM">6:00 PM</option>
-	     </select>
-	     </div>
-	    </div>
-  
-
-        <div class="form-group"><label for="inputEmail3" class="col-sm-2 control-label">To ?</label><div class="col-sm-10"> 
-	    <input type="text" name="purpose" placeholder="Meeting Agenda/Purpose" class='form-control'>
-        </div>
-        </div>
-
-
-	    
-										  </div>
-										</form>
-
-								    </div>	
-
-
-								    <div class="tab-pane" id="tab4">
-
-								    	    <input type="hidden" id="post_id" value="999"/>
-
-								    <!-- CREATE A CONTAINER TO LOAD COMMENTS -->
-								    <div id="comments"></div>
-
-								    <!-- CREATE A CONTAINER TO LOAD REPLY DOCKET -->
-								    <div id="reply-main"></div> 
-
-                        
-								    </div>	
-	
-									<ul class="pager wizard">
-										<div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
-									</ul>
-								</div>	
-							</div>
-		  				</div>
-		  			</div>
-					</div>
-				</div>
-
-
-
-
-
-		
-
-
-		  	<div class="content-box-large">
-				
-			
-			
-			
-
-		  	</div>
-
-		  	<!-- End -->
-
-
-		  </div>
-		</div>
-    </div>
-
-    <footer>
-         <div class="container">
-         
-            <div class="copy text-center">
-               Copyright 2014 <a href='#'>Website</a>
+                    </div>
+                </div>
             </div>
-            
-         </div>
-      </footer>
+        </div>
+    </div>
+    <!-- End Header Top Area -->
+ 
+    <!-- Breadcomb area Start-->
+    <div class="breadcomb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcomb-list">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="breadcomb-wp">
+                                    <div class="breadcomb-icon">
+                                        <i class="notika-icon notika-app"></i>
+                                    </div>
+                                    <div class="breadcomb-ctn">
+                                        <h2>Tabs</h2>
+                                        <p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+                                <div class="breadcomb-report">
+                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcomb area End-->
+    <!-- Start tabs area-->
+    <div class="tabs-info-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="widget-tabs-int">
+                        <div class="tab-hd">
+                            <h2>Tabs</h2>
+                            <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus.</p>
+                        </div>
+                        <div class="widget-tabs-list">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#home">Set Meeting (Telemarketing)</a></li>
+                                <li><a data-toggle="tab" href="#menu1">Clients Meeted (Accounts)</a></li>
+                                <li><a data-toggle="tab" href="#menu2">Client Status</a></li>
+                            </ul>
+                            <div class="tab-content tab-custom-st">
+                                <div id="home" class="tab-pane fade in active">
+                                    <div class="tab-ctn">
+                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Company Name</th>
+                                <th>Contact Person</th>
+                                <th>Contact Number</th>
+                                <th>Company Location</th>
+                                <th>Status</th>
+                    <!--            <th>Agent</th> -->
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while($crow = mysqli_fetch_array($nquery)){
+                            ?>
+                            <tr class="odd gradeX">
+                                <td><?php echo $crow['id']; ?></td>
+                                <td><?php echo $crow['firstname']; ?></td>
+                                <td><?php echo $crow['middlename']; ?></td>
+                                <td><?php echo $crow['lastname']; ?></td>
+                                <td><?php echo $crow['c_location']; ?></td>
+                                <td><?php echo $crow['status']; ?></td>
+                                <!--  -->
+                                <?php
+                                    echo "<td><a href='lead-edit.php?id=".$crow['firstname']."'><img src='./images/icons8-Edit-32.png' alt='Edit'></a></td>";
+                
+                                ?>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
-  </body>
+
+                                    </div>
+                                    <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                    <div class="tab-ctn">
+                                         <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Company Name</th>
+                                <th>Contact Person</th>
+                                <th>Contact Number</th>
+                                <th>Company Location</th>
+                                <th>Status</th>
+                    <!--            <th>Agent</th> -->
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while($crow = mysqli_fetch_array($nquery)){
+                            ?>
+                            <tr class="odd gradeX">
+                                <td><?php echo $crow['id']; ?></td>
+                                <td><?php echo $crow['firstname']; ?></td>
+                                <td><?php echo $crow['middlename']; ?></td>
+                                <td><?php echo $crow['lastname']; ?></td>
+                                <td><?php echo $crow['c_location']; ?></td>
+                                <td><?php echo $crow['status']; ?></td>
+                                <!--  -->
+                                <?php
+                                    echo "<td><a href='lead-edit.php?id=".$crow['firstname']."'><img src='./images/icons8-Edit-32.png' alt='Edit'></a></td>";
+                
+                                ?>
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
+
+                                    </div>
+                                </div>
+                                <div id="menu2" class="tab-pane fade">
+                                    <div class="tab-ctn">
+                                        <p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nulla sit amet est. Praesent ac the massa at ligula laoreet iaculis. Vivamus aliquet elit ac nisl. Nulla porta dolor. Cras dapibus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                                        <p class="tab-mg-b-0">In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nam eget dui. In ac felis quis tortor malesuadan of pretium. Phasellus consectetuer vestibulum elit. Duis lobortis massa imperdiet quam. Pellentesque commodo eros a enim. Vestibulum ante ipsum primis in faucibus orci the luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Phasellus a est. Pellentesque commodo eros a enim. Cras ultricies mi eu turpis hendrerit of fringilla. Donec mollis hendrerit risus. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Praesent egestas neque eu enim. In hac habitasse plat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End tabs area-->
+    <!-- Start Footer area-->
+    <div class="footer-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2018 
+. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer area-->
+    <!-- jquery
+        ============================================ -->
+    <script src="js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- bootstrap JS
+        ============================================ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- wow JS
+        ============================================ -->
+    <script src="js/wow.min.js"></script>
+    <!-- price-slider JS
+        ============================================ -->
+    <script src="js/jquery-price-slider.js"></script>
+    <!-- owl.carousel JS
+        ============================================ -->
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- scrollUp JS
+        ============================================ -->
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <!-- meanmenu JS
+        ============================================ -->
+    <script src="js/meanmenu/jquery.meanmenu.js"></script>
+    <!-- counterup JS
+        ============================================ -->
+    <script src="js/counterup/jquery.counterup.min.js"></script>
+    <script src="js/counterup/waypoints.min.js"></script>
+    <script src="js/counterup/counterup-active.js"></script>
+    <!-- sparkline JS
+        ============================================ -->
+    <script src="js/sparkline/jquery.sparkline.min.js"></script>
+    <script src="js/sparkline/sparkline-active.js"></script>
+    <!-- knob JS
+        ============================================ -->
+    <script src="js/knob/jquery.knob.js"></script>
+    <script src="js/knob/jquery.appear.js"></script>
+    <script src="js/knob/knob-active.js"></script>
+    <!-- mCustomScrollbar JS
+        ============================================ -->
+    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- flot JS
+        ============================================ -->
+    <script src="js/flot/flot-widget-anatic-active.js"></script>
+    <script src="js/flot/chart-tooltips.js"></script>
+    <script src="js/flot/flot-active.js"></script>
+    <!--  wave JS
+        ============================================ -->
+    <script src="js/wave/waves.min.js"></script>
+    <script src="js/wave/wave-active.js"></script>
+    <!-- plugins JS
+        ============================================ -->
+    <script src="js/plugins.js"></script>
+    <!-- main JS
+        ============================================ -->
+    <script src="js/main.js"></script>
+    <!-- tawk chat JS
+        ============================================ -->
+    <script src="js/tawk-chat.js"></script>
+</body>
+
 </html>
