@@ -423,7 +423,7 @@ $date=date('F j, Y g:i:a');
                         </div>
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home">Set Meeting (Telemarketing)</a></li>
+                                <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
                                 <li><a data-toggle="tab" href="#menu1">Clients Meeted (Accounts)</a></li>
                                 <li><a data-toggle="tab" href="#menu2">Client Status</a></li>
                             </ul>
@@ -468,12 +468,11 @@ $date=date('F j, Y g:i:a');
                                          <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Company Name</th>
-                                <th>Contact Person</th>
-                                <th>Contact Number</th>
-                                <th>Company Location</th>
-                                <th>Status</th>
+                                <th>MessengerID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Transaction Date</th>
+                                <th>Viewing</th>
                     <!--            <th>Agent</th> -->
                                 <th>Update</th>
                             </tr>
@@ -483,21 +482,18 @@ $date=date('F j, Y g:i:a');
                             while($crow = mysqli_fetch_array($nquery)){
                             ?>
                             <tr class="odd gradeX">
-                                <td><?php echo $crow['id']; ?></td>
-                                <td><?php echo $crow['firstname']; ?></td>
-                                <td><?php echo $crow['middlename']; ?></td>
-                                <td><?php echo $crow['lastname']; ?></td>
-                                <td><?php echo $crow['c_location']; ?></td>
-                                <td><?php echo $crow['status']; ?></td>
+                                <td><?php echo $crow['MessengerId']; ?></td>
+                                <td><?php echo $crow['Fname']; ?></td>
+                                <td><?php echo $crow['Lname']; ?></td>
+                                <td><?php echo $crow['LastActive']; ?></td>
+                                <td><?php echo $crow['LastClicked']; ?></td>
+                                
                                 <!--  -->
-                                <?php
-                                    echo "<td><a href='lead-edit.php?id=".$crow['firstname']."'><img src='./images/icons8-Edit-32.png' alt='Edit'></a></td>";
-                
-                                ?>
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
+
 
                                     </div>
                                 </div>

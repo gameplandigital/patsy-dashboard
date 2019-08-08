@@ -30,7 +30,7 @@
  
 	$limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
  
-	$nquery=mysqli_query($conn,"SELECT MessengerId,Fname,Lname,LastActive,LastClicked FROM air21_users ORDER by LastActive DESC 
+	$nquery=mysqli_query($conn,"SELECT * FROM air21_users ORDER by LastActive DESC 
  desc $limit");
  
 	$paginationCtrls = '';
