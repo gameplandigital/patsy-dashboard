@@ -60,7 +60,7 @@ $date=date('F j, Y g:i:a');
      $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
      $username='patsydigital01';
      $password='pAtsy06072018';
-     $database_name='test_system';
+     $database_name='patsy_db';
 
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
@@ -78,7 +78,7 @@ $date=date('F j, Y g:i:a');
      $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
      $username='patsydigital01';
      $password='pAtsy06072018';
-     $database_name='test_system';
+     $database_name='patsy_db';
 
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
@@ -95,7 +95,7 @@ $date=date('F j, Y g:i:a');
      $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
      $username='patsydigital01';
      $password='pAtsy06072018';
-     $database_name='test_system';
+     $database_name='patsy_db';
 
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
