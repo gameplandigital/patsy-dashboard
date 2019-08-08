@@ -4,12 +4,12 @@
     if(isset($_POST['search']))
   {
     $valueToSearh = $_POST['valueToSearh']; 
-    $query = "SELECT * FROM lead_users_unicare WHERE firstname LIKE '%".$valueToSearh."%' OR lastname LIKE '%".$valueToSearh."%' OR middlename LIKE '%".$valueToSearh."' OR status LIKE '%".$valueToSearh."%' OR agent LIKE '%".$valueToSearh."%'";
+    $query = "SELECT * FROM air21_users WHERE firstname LIKE '%".$valueToSearh."%' OR lastname LIKE '%".$valueToSearh."%' OR middlename LIKE '%".$valueToSearh."' OR status LIKE '%".$valueToSearh."%' OR agent LIKE '%".$valueToSearh."%'";
     $nquery = filterRecord($query);
   }
   else
   {
-    $query = "SELECT *FROM lead_users_unicare";
+    $query = "SELECT *FROM air21_users";
     $nquery = filterRecord($query);
   }
   
@@ -41,7 +41,7 @@ $date=date('F j, Y g:i:a');
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>AIRCAST | TELEMARKETING</title>
+    <title>PATSY | AIR21</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
