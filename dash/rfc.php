@@ -65,7 +65,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM air21_users WHERE BotTag='AIR21' AND FirstOptin = CURRENT_DATE() OR LastActive = CURRENT_DATE()";
+      $sql="SELECT count(id) AS total FROM rfc_users WHERE BusinessTag= 'BUSINESS_LOAN'";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_Callback=$values['total'];
@@ -83,7 +83,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM air21_users WHERE LastClicked='OPEN_PACKAGE_TRACKER_SUCCESS '";
+      $sql="SELECT count(id) AS total FROM rfc_users WHERE MultiTag= 'MULTI_PURPOSE_LOAN'";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_InCorrect=$values['total'];
@@ -100,7 +100,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM air21_users WHERE LastClicked='OPEN_SEND_CONCERN_SUCCESS'";
+      $sql="SELECT count(id) AS total FROM rfc_users WHERE FinancingTag= 'FINANCING_LOAN'";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_Meeting=$values['total'];
@@ -215,7 +215,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_Callback; ?></span></h2>
-                            <p>Today's User</p>
+                            <p>Business Loans Visit</p>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
-                            <p>Total Packaged Track</p>
+                            <p>Multi Loans Visit</p>
                         </div>
                     </div>
                 </div>
@@ -231,7 +231,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_Meeting; ?></span></h2>
-                            <p>Total Concern Sent</p>
+                            <p>Financing Loans Visit</p>
                         </div>
                     </div>
                 </div>
@@ -317,7 +317,7 @@ $date=date('F j, Y g:i:a');
                                 <td><?php echo $crow['Fname']; ?></td>
                                 <td><?php echo $crow['Lname']; ?></td>
                                 <td><?php echo $crow['LastActive']; ?></td>
-                                <td><?php echo $crow['LastClicked']; ?></td>
+                                <td><?php echo $crow['Tag']; ?></td>
                                 
                                 <!--  -->
                             </tr>
