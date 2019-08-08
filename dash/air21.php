@@ -41,12 +41,12 @@ $date=date('F j, Y g:i:a');
      $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
      $username='patsydigital01';
      $password='pAtsy06072018';
-     $database_name='test_system';
+     $database_name='patsy_db';
 
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='New_Leads'";
+      $sql="SELECT count(id) AS total FROM air21_users WHERE BotTag='AIR21'";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_New=$values['total'];
@@ -65,7 +65,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='Callback'";
+      $sql="SELECT count(id) AS total FROM air21_users WHERE BotTag='AIR21' AND FirstOptin = CURRENT_DATE() OR LastActive = CURRENT_DATE()";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_Callback=$values['total'];
@@ -83,7 +83,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='In-Correct'";
+      $sql="SELECT count(id) AS total FROM air21_users WHERE LastClicked='OPEN_PACKAGE_TRACKER_SUCCESS '";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_InCorrect=$values['total'];
@@ -100,7 +100,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='Set_Meeting'";
+      $sql="SELECT count(id) AS total FROM air21_users WHERE LastClicked='OPEN_SEND_CONCERN_SUCCESS'";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_Meeting=$values['total'];
@@ -469,7 +469,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
-                            <p>Total New Opportunity</p>
+                            <p>Current Bot Subscriber</p>
                         </div>
                     </div>
                 </div>
@@ -477,7 +477,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_Callback; ?></span></h2>
-                            <p>Total Callback</p>
+                            <p>Today's User</p>
                         </div>
                     </div>
                 </div>
@@ -485,7 +485,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
-                            <p>Total In-Correct</p>
+                            <p>Total Packaged Track</p>
                         </div>
                     </div>
                 </div>
@@ -493,7 +493,7 @@ $date=date('F j, Y g:i:a');
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_Meeting; ?></span></h2>
-                            <p>Total Set Meeting</p>
+                            <p>Total Concern Sent</p>
                         </div>
                     </div>
                 </div>
