@@ -46,7 +46,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM air21_users WHERE BotTag='AIR21'";
+      $sql="SELECT count(id) AS total FROM rfc_users WHERE BotTag='RFC'";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_New=$values['total'];
@@ -298,6 +298,7 @@ $date=date('F j, Y g:i:a');
                         <thead>
                             <tr>
                                 <th>MessengerID</th>
+                                <th>Profile Link</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Transaction Date</th>
@@ -312,6 +313,7 @@ $date=date('F j, Y g:i:a');
                             ?>
                             <tr class="odd gradeX">
                                 <td><?php echo $crow['MessengerId']; ?></td>
+                                <td><?php echo $crow['Profile_pic']; ?></td>
                                 <td><?php echo $crow['Fname']; ?></td>
                                 <td><?php echo $crow['Lname']; ?></td>
                                 <td><?php echo $crow['LastActive']; ?></td>
@@ -333,6 +335,7 @@ $date=date('F j, Y g:i:a');
                         <thead>
                             <tr>
                                 <th>MessengerID</th>
+                                <th>Profile Link</th>
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Transaction Date</th>
@@ -347,6 +350,7 @@ $date=date('F j, Y g:i:a');
                             ?>
                             <tr class="odd gradeX">
                                 <td><?php echo $crow['MessengerId']; ?></td>
+                                <td><?php echo $crow['Profile_pic']; ?></td>
                                 <td><?php echo $crow['Fname']; ?></td>
                                 <td><?php echo $crow['Lname']; ?></td>
                                 <td><?php echo $crow['LastActive']; ?></td>
