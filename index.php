@@ -4,13 +4,13 @@ $con  = mysqli_connect("patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com","
      # code...
     echo "Problem in database connection! Contact administrator!" . mysqli_error();
  }else{
-         $sql ="SELECT * FROM tblsales";
+         $sql ="SELECT count(id) as daily,LastActive as date FROM `air21_users` WHERE LastClicked = 'GET_STARTED' OR LastClicked = 'MENU_MAIN_MENU' GROUP BY day( date )";
          $result = mysqli_query($con,$sql);
          $chart_data="";
          while ($row = mysqli_fetch_array($result)) { 
  
-            $productname[]  = $row['Product']  ;
-            $sales[] = $row['TotalSales'];
+            $productname[]  = $row['date']  ;
+            $sales[] = $row['daily'];
         }
  
  
