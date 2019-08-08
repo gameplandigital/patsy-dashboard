@@ -35,6 +35,84 @@ $date=date('F j, Y g:i:a');
 ?>
 
 
+<!-- Monitoring -->
+
+        <?php
+     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
+     $username='patsydigital01';
+     $password='pAtsy06072018';
+     $database_name='test_system';
+
+
+      $con = mysqli_connect($host, $username, $password, $database_name); 
+
+      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='New_Leads'";
+      $result=mysqli_query($con,$sql);
+      $values=mysqli_fetch_assoc($result);
+      $Total_New=$values['total'];
+
+                              
+      ?>
+
+
+
+        <?php
+     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
+     $username='patsydigital01';
+     $password='pAtsy06072018';
+     $database_name='test_system';
+
+
+      $con = mysqli_connect($host, $username, $password, $database_name); 
+
+      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='Callback'";
+      $result=mysqli_query($con,$sql);
+      $values=mysqli_fetch_assoc($result);
+      $Total_Callback=$values['total'];
+
+                              
+      ?>
+
+
+         <?php
+     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
+     $username='patsydigital01';
+     $password='pAtsy06072018';
+     $database_name='test_system';
+
+
+      $con = mysqli_connect($host, $username, $password, $database_name); 
+
+      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='In-Correct'";
+      $result=mysqli_query($con,$sql);
+      $values=mysqli_fetch_assoc($result);
+      $Total_InCorrect=$values['total'];
+
+                              
+      ?>
+
+           <?php
+     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
+     $username='patsydigital01';
+     $password='pAtsy06072018';
+     $database_name='test_system';
+
+
+      $con = mysqli_connect($host, $username, $password, $database_name); 
+
+      $sql="SELECT count(id) AS total FROM lead_users_unicare WHERE status='Set_Meeting'";
+      $result=mysqli_query($con,$sql);
+      $values=mysqli_fetch_assoc($result);
+      $Total_Meeting=$values['total'];
+
+                              
+      ?>
+
+
+<!-- END Monitoring -->
+
+
+
 <!doctype html>
 <html class="no-js" lang="ca">
 
@@ -380,6 +458,55 @@ $date=date('F j, Y g:i:a');
         </div>
     </div>
     <!-- End Header Top Area -->
+
+    <br>
+
+       <!-- Start Status area -->
+    <div class="notika-status-area">
+        <center><div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
+                            <p>Total New Opportunity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_Callback; ?></span></h2>
+                            <p>Total Callback</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
+                            <p>Total In-Correct</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_Meeting; ?></span></h2>
+                            <p>Total Set Meeting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div></center>
+    </div>
+    <!-- End Status area-->
+
+
+
+
+    <br>
+
  
     <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
