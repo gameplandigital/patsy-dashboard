@@ -17,7 +17,7 @@ if($rows['userlevel'] == '1')
 	$_SESSION['user'] = $username;
 	$date = date('Y-m-d H:i:s');
     $query = "UPDATE login_users SET login_time = '$user' WHERE username = '$username'";
-	header('Location: home.php');  
+	header('Location: rfc.php');  
 }
 
 else if($rows['userlevel'] == '2') 
@@ -28,7 +28,7 @@ else if($rows['userlevel'] == '2')
 	header('Location: air21.php');  
 }
 else{ 
-	header('Location: rfc.php');
+	header('Location: login-register.html');
 }
 ?>
 
