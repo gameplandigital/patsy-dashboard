@@ -368,9 +368,11 @@ $empResult = mysqli_query($conn, $empSQL);
                                       <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                                 <thead>
                                 <tr>
-                                <th>EmpID</th>
-                                <th>Name</th>
-                                <th>Salary</th>
+                                <th>MessengerID</th>
+                                <th>First</th>
+                                <th>Middle</th>
+                                <th>Last</th>
+                                <th>Registration Date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -378,9 +380,11 @@ $empResult = mysqli_query($conn, $empSQL);
                                 while($emp = mysqli_fetch_assoc($empResult)){
                                 ?>
                                 <tr>
-                                <th scope="row"><?php echo $emp['id']; ?></th>
-                                <td><?php echo $emp['employee_name']; ?></td>
-                                <td><?php echo $emp['employee_salary']; ?></td>
+                                <th scope="row"><?php echo $emp['user_id']; ?></th>
+                                <td><?php echo $emp['fname']; ?></td>
+                                <td><?php echo $emp['mname']; ?></td>
+                                <td><?php echo $emp['lname']; ?></td>
+                                <td><?php echo $emp['register_date']; ?></td>
                                 </tr>
                                 <?php } ?>
                                 </tbody>
