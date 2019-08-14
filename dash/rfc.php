@@ -386,9 +386,12 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <td><?php echo $emp['mname']; ?></td>
                                 <td><?php echo $emp['lname']; ?></td>
                                 <td><?php echo $emp['register_date']; ?></td>
-                                <td>
+                            
+                                     <?php
+                                    echo "<td><a href='lead-edit.php?id=".$emp['user_id']."'><img src='./images/icons8-Edit-32.png' alt='Edit'></a></td>";
+                                     ?>
                                     
-                                </td>
+                    
                                 </tr>
                                 <?php } ?>
                                 </tbody>
