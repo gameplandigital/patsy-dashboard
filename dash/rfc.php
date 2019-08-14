@@ -117,7 +117,7 @@ $date=date('F j, Y g:i:a');
 
 
 <?php
-include_once("db_connect.php");
+include_once("conn.php");
 $showRecordPerPage = 5;
 if(isset($_GET['page']) && !empty($_GET['page'])){
 $currentPage = $_GET['page'];
