@@ -369,9 +369,9 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <thead>
                                 <tr>
                                 <th>MessengerID</th>
-                                <th>First</th>
-                                <th>Middle</th>
-                                <th>Last</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
                                 <th>Registration Date</th>
                                 </tr>
                                 </thead>
