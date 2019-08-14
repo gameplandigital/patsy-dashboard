@@ -336,13 +336,12 @@ $date=date('F j, Y g:i:a');
                         <thead>
                             <tr>
                                 <th>MessengerID</th>
-                                <th>Profile Link</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Transaction Date</th>
-                                <th>Viewing</th>
-                    <!--            <th>Agent</th> -->
-                                <th>Update</th>
+                                <th>First</th>
+                                <th>Middle</th>
+                                <th>Last</th>
+                                <th>Marital</th>
+                                <th>Gender</th>
+                                <th>View Info</th>
                             </tr>
                         </thead>
                         <tbody>
