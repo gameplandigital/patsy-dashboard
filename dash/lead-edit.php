@@ -39,9 +39,9 @@ $(document).ready(function(){
 <form action="update_lead.php" method="POST">
   <div class="container">
   <?php
-	// $result = mysqli_query($mysqli,"SELECT * FROM lead_users WHERE firstname ='$id'");
-	// while($row = mysqli_fetch_array($result))
-	// {
+	$result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
+	while($row = mysqli_fetch_array($result))
+	{
 
     echo"<input type='text' placeholder='Company Name' name='fname' value='{$row['fname']}' required>";
     echo"<input type='text' placeholder='Contact Person' name='middlename' value='{$row['mname']}' required>";
@@ -49,7 +49,7 @@ $(document).ready(function(){
     echo"<input type='text' name='c_location' value='{$row['c_location']}'required>";
   
 	echo"</div>";
-	// }
+	}
   ?>
   </div>
 </form>
