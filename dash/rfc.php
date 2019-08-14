@@ -323,7 +323,7 @@ $empResult = mysqli_query($conn, $empSQL);
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
-                                 <li><a data-toggle="tab" href="#menu1">User Application</a></li>
+                                 <li><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active">
@@ -373,6 +373,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <th>Middle Name</th>
                                 <th>Last Name</th>
                                 <th>Registration Date</th>
+                                <th>View</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -385,6 +386,9 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <td><?php echo $emp['mname']; ?></td>
                                 <td><?php echo $emp['lname']; ?></td>
                                 <td><?php echo $emp['register_date']; ?></td>
+                                <td>
+                                    
+                                </td>
                                 </tr>
                                 <?php } ?>
                                 </tbody>
