@@ -43,34 +43,11 @@ $(document).ready(function(){
 	// while($row = mysqli_fetch_array($result))
 	// {
 
-    echo"<input type='text' placeholder='Company Name' name='fname' value='{$row['firstname']}' required>";
-    echo"<input type='text' placeholder='Contact Person' name='middlename' value='{$row['middlename']}' required>";
-    echo"<input type='number' placeholder='Contact Number' name='lastname' value='{$row['lastname']}' required>";
+    echo"<input type='text' placeholder='Company Name' name='fname' value='{$row['fname']}' required>";
+    echo"<input type='text' placeholder='Contact Person' name='middlename' value='{$row['mname']}' required>";
+    echo"<input type='number' placeholder='Contact Number' name='lastname' value='{$row['lname']}' required>";
     echo"<input type='text' name='c_location' value='{$row['c_location']}'required>";
-    echo"<select name='status' style='width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 2px solid #ccc; box-sizing: border-box;'>
-      <option value='{$row['status']}'>{$row['status']}</option>
-      <option value='New_Leads'>New Leads</option>
-      <option value='Set_Meeting'>Set Meeting</option>
-      <option value='Callback'>Callback</option>
-      <option value='Trash'>Trash</option>
-      <option value='OnBoarded'>On-Boarded</option>
-    </select>";
-     echo"<input type='number' name='site' value='{$row['site']}'required>";
-     echo"<input type='number' name='spots' value='{$row['spots']}'required>";
-     echo"<select name='package' style='width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 2px solid #ccc; box-sizing: border-box;'>
-      <option value='{$row['package']}'>{$row['package']}</option>
-      <option value='100000'>Package A | 100,000</option>
-      <option value='200000'>Package B | 200,000</option>
-      <option value='300000'>Package C | 300,000</option>
-      <option id='green'>Customize</option>
-    </select>";
-
-    echo"<div class='green box'><input type='number' name='custom' placeholder='Input Amount'></div>";
-
-    echo"<input type='hidden' name='vat' value='0.12'>";
-
-    echo"<div class='clearfix'>";
-    echo"<button type='submit' class='signupbtn'>Update</button>";
+  
 	echo"</div>";
 	// }
   ?>
