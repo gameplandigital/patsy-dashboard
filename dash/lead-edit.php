@@ -40,19 +40,82 @@ $(document).ready(function(){
 
 <?php
 
-$result = mysqli_query($con,"SELECT * FROM Persons");
+$result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
 
 echo "<table border='1'>
 <tr>
-<th>Firstname</th>
-<th>Lastname</th>
+<th>user_id</th>
+<th>fname</th>
+<th>mname</th>
+<th>lname</th>
+<th>marital_status</th>
+<th>gender</th>
+<th>birthday</th>
+<th>educ_attain</th>
+<th>nationality</th>
+<th>address</th>
+<th>year_stay</th>
+<th>month_stay</th>
+<th>email</th>
+<th>m_number</th>
+<th>monthly_salary</th>
+<th>nature_employment</th>
+<th>sector</th>
+<th>position</th>
+<th>years_employment</th>
+<th>months_employment</th>
+<th>loan_purpose</th>
+<th>collateral_type</th>
+<th>tenure_months</th>
+<th>loan_amount_request</th>
+<th>source_info</th>
+<th>addition_income</th>
+<th>terms_condition</th>
+<th>doc1</th>
+<th>doc2</th>
+<th>doc3</th>
+<th>doc4</th>
+<th>register_date</th>
+
 </tr>";
 
 while($row = mysqli_fetch_array($result))
 {
 echo "<tr>";
-echo "<td>" . $row['FirstName'] . "</td>";
-echo "<td>" . $row['LastName'] . "</td>";
+echo "<td>" . $row['user_id'] . "</td>";
+echo "<td>" . $row['fname'] . "</td>";
+echo "<td>" . $row['mname'] . "</td>";
+echo "<td>" . $row['lname'] . "</td>";
+echo "<td>" . $row['marital_status'] . "</td>";
+echo "<td>" . $row['gender'] . "</td>";
+echo "<td>" . $row['birthday'] . "</td>";
+echo "<td>" . $row['educ_attain'] . "</td>";
+echo "<td>" . $row['nationality'] . "</td>";
+echo "<td>" . $row['address'] . "</td>";
+echo "<td>" . $row['year_stay'] . "</td>";
+echo "<td>" . $row['month_stay'] . "</td>";
+echo "<td>" . $row['email'] . "</td>";
+echo "<td>" . $row['m_number'] . "</td>";
+echo "<td>" . $row['monthly_salary'] . "</td>";
+echo "<td>" . $row['nature_employment'] . "</td>";
+echo "<td>" . $row['sector'] . "</td>";
+echo "<td>" . $row['position'] . "</td>";
+echo "<td>" . $row['years_employment'] . "</td>";
+echo "<td>" . $row['months_employment'] . "</td>";
+echo "<td>" . $row['loan_purpose'] . "</td>";
+echo "<td>" . $row['collateral_type'] . "</td>";
+echo "<td>" . $row['tenure_months'] . "</td>";
+echo "<td>" . $row['loan_amount_request'] . "</td>";
+echo "<td>" . $row['source_info'] . "</td>";
+echo "<td>" . $row['addition_income'] . "</td>";
+echo "<td>" . $row['terms_condition'] . "</td>";
+echo "<td>" . $row['doc1'] . "</td>";
+echo "<td>" . $row['doc2'] . "</td>";
+echo "<td>" . $row['doc3'] . "</td>";
+echo "<td>" . $row['doc4'] . "</td>";
+echo "<td>" . $row['register_date'] . "</td>";
+
+
 echo "</tr>";
 }
 echo "</table>";
