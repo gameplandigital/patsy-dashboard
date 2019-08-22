@@ -97,7 +97,6 @@ $(document).ready(function(){
                             while($row = mysqli_fetch_array($result))
                             ?>
                             <tr class="odd gradeX">
-                                <!-- <td><?php echo ; ?></td> -->
                                 <td><?php echo $row['user_id']; ?></td>
                                 <td><?php echo $row['fname']; ?></td>
                                 <td><?php echo $row['mname']; ?></td>
@@ -130,10 +129,6 @@ $(document).ready(function(){
                                 <td><?php echo $row['doc3']; ?></td>
                                 <td><?php echo $row['doc4']; ?></td>
                                 <td><?php echo $row['register_date']; ?></td>
-
-
-                                
-                                <!--  -->
                             </tr>
                             <?php } ?>
                         </tbody>
