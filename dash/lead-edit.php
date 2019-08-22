@@ -93,7 +93,7 @@ $(document).ready(function(){
                         </thead>
                         <tbody>
                             <?php
-                           	$result = "SELECT * FROM rfc_apply WHERE user_id ='$id'";
+                           	$result = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
                             while($row = mysqli_fetch_array($result))
                             ?>
                             <tr class="odd gradeX">
