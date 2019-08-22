@@ -36,12 +36,60 @@ $(document).ready(function(){
 <!-- <h2>Update</h2> -->
 <hr/>
 
+
+
+
+
+<div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                    <div class="tab-ctn">
+                                      <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                <thead>
+                                <tr>
+                                <th>MessengerID</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Registration Date</th>
+                                <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                while($emp = mysqli_fetch_assoc($empResult)){
+                                ?>
+                                <tr>
+                                <th scope="row"><?php echo $emp['user_id']; ?></th>
+                                <td><?php echo $emp['fname']; ?></td>
+                                <td><?php echo $emp['mname']; ?></td>
+                                <td><?php echo $emp['lname']; ?></td>
+                                <td><?php echo $emp['register_date']; ?></td>
+                            
+                                     <?php
+                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                     ?>
+                                    
+                    
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                                </table>
+
+
+
+
+
+
+
 <form action="update_lead.php" method="POST">
   <div class="container">
   <?php
 	$result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
 	while($row = mysqli_fetch_array($result))
 	{
+
+
 
     echo"<input type='text' placeholder='Company Name' name='fname' value='{$row['fname']}' required>";
     echo"<input type='text' placeholder='Contact Person' name='middlename' value='{$row['mname']}' required>";
