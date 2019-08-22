@@ -93,8 +93,9 @@ $(document).ready(function(){
                         </thead>
                         <tbody>
                             <?php
-                           	$result = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
-                            while($row = mysqli_fetch_assoc($result))
+                           	$result1=mysqli_query($conn,"SELECT * FROM rfc_apply WHERE user_id ='$user_id'");
+                            $result=mysqli_fetch_assoc($uquery);
+                             while($row = mysqli_fetch_array($result))
                             ?>
                             <tr class="odd gradeX">
                                 <td><?php echo $row['user_id']; ?></td>
