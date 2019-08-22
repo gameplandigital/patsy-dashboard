@@ -37,6 +37,70 @@ $(document).ready(function(){
 <hr/>
 
 
+                                    <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
+                                </div>
+                                    <div class="tab-ctn">
+                                      <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                <thead>
+                                <tr>
+                                <th>MessengerID</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Registration Date</th>
+                                <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                while($emp = mysqli_fetch_assoc($empResult)){
+                                ?>
+                                <tr>
+                                <th scope="row"><?php echo $emp['user_id']; ?></th>
+                                <td><?php echo $emp['fname']; ?></td>
+                                <td><?php echo $emp['mname']; ?></td>
+                                <td><?php echo $emp['lname']; ?></td>
+                                <td><?php echo $emp['register_date']; ?></td>
+                            
+                                     <?php
+                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                     ?>
+                                    
+                    
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                                </table>
+
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                    <?php if($currentPage != $firstPage) { ?>
+                                    <li class="page-item">
+                                    <a class="page-link" href="?page=<?php echo $firstPage ?>" tabindex="-1" aria-label="Previous">
+                                    <span aria-hidden="true">First</span>
+                                    </a>
+                                    </li>
+                                    <?php } ?>
+                                    <?php if($currentPage >= 2) { ?>
+                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $previousPage ?>"><?php echo $previousPage ?></a></li>
+                                    <?php } ?>
+                                    <li class="page-item active"><a class="page-link" href="?page=<?php echo $currentPage ?>"><?php echo $currentPage ?></a></li>
+                                    <?php if($currentPage != $lastPage) { ?>
+                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $nextPage ?>"><?php echo $nextPage ?></a></li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="?page=<?php echo $lastPage ?>" aria-label="Next">
+                                    <span aria-hidden="true">Last</span>
+                                    </a>
+                                    </li>
+                                    <?php } ?>
+                                    </ul>
+                                    </nav>
+                                    </div>
+
+
+
+
+
 <form action="update_lead.php" method="POST">
   <div class="container">
   <?php
