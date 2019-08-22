@@ -37,91 +37,133 @@ $(document).ready(function(){
 <hr/>
 
 
-
-<?php
-
-	$result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
-
-echo "<table border='1'>
-<tr>
-<th>user_id</th>
-<th>fname</th>
-<th>mname</th>
-<th>lname</th>
-<th>marital_status</th>
-<th>gender</th>
-<th>birthday</th>
-<th>educ_attain</th>
-<th>nationality</th>
-<th>address</th>
-<th>year_stay</th>
-<th>month_stay</th>
-<th>email</th>
-<th>m_number</th>
-<th>monthly_salary</th>
-<th>nature_employment</th>
-<th>sector</th>
-<th>position</th>
-<th>years_employment</th>
-<th>months_employment</th>
-<th>loan_purpose</th>
-<th>collateral_type</th>
-<th>tenure_months</th>
-<th>loan_amount_request</th>
-<th>source_info</th>
-<th>addition_income</th>
-<th>terms_condition</th>
-<th>doc1</th>
-<th>doc2</th>
-<th>doc3</th>
-<th>doc4</th>
-<th>register_date</th>
-
-</tr>";
-
-while($row = mysqli_fetch_array($result))
-{
-echo "<tr>";
-echo "<td>" . $row['user_id'] . "</td>";
-echo "<td>" . $row['fname'] . "</td>";
-echo "<td>" . $row['mname'] . "</td>";
-echo "<td>" . $row['lname'] . "</td>";
-echo "<td>" . $row['marital_status'] . "</td>";
-echo "<td>" . $row['gender'] . "</td>";
-echo "<td>" . $row['birthday'] . "</td>";
-echo "<td>" . $row['educ_attain'] . "</td>";
-echo "<td>" . $row['nationality'] . "</td>";
-echo "<td>" . $row['address'] . "</td>";
-echo "<td>" . $row['year_stay'] . "</td>";
-echo "<td>" . $row['month_stay'] . "</td>";
-echo "<td>" . $row['email'] . "</td>";
-echo "<td>" . $row['m_number'] . "</td>";
-echo "<td>" . $row['monthly_salary'] . "</td>";
-echo "<td>" . $row['nature_employment'] . "</td>";
-echo "<td>" . $row['sector'] . "</td>";
-echo "<td>" . $row['position'] . "</td>";
-echo "<td>" . $row['years_employment'] . "</td>";
-echo "<td>" . $row['months_employment'] . "</td>";
-echo "<td>" . $row['loan_purpose'] . "</td>";
-echo "<td>" . $row['collateral_type'] . "</td>";
-echo "<td>" . $row['tenure_months'] . "</td>";
-echo "<td>" . $row['loan_amount_request'] . "</td>";
-echo "<td>" . $row['source_info'] . "</td>";
-echo "<td>" . $row['addition_income'] . "</td>";
-echo "<td>" . $row['terms_condition'] . "</td>";
-echo "<td>" . $row['doc1'] . "</td>";
-echo "<td>" . $row['doc2'] . "</td>";
-echo "<td>" . $row['doc3'] . "</td>";
-echo "<td>" . $row['doc4'] . "</td>";
-echo "<td>" . $row['register_date'] . "</td>";
+<div class="tabs-info-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="widget-tabs-int">
+                        <div class="tab-hd">
+                            <h2>USER LOGS</h2>
+                            
+                        </div>
+                        <div class="widget-tabs-list">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
+                                 <li><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
+                            </ul>
+                            <div class="tab-content tab-custom-st">
+                                <div id="home" class="tab-pane fade in active">
+                                    <div class="tab-ctn">
+                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                        <thead>
+                            <tr>
+                                <th>MessengerID</th>
+                                <th>Profile Link</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Transaction Date</th>
+                                <th>Currently Viewing</th>
+                    <!--            <th>Agent</th> -->
+                            
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            while($crow = mysqli_fetch_array($nquery)){
+                            ?>
+                            <tr class="odd gradeX">
+                                <td><?php echo $crow['MessengerId']; ?></td>
+                                <td><?php echo $crow['Profile_pic']; ?></td>
+                                <td><?php echo $crow['Fname']; ?></td>
+                                <td><?php echo $crow['Lname']; ?></td>
+                                <td><?php echo $crow['LastActive']; ?></td>
+                                <td><?php echo $crow['Tag']; ?></td>
+                                
+                                <!--  -->
+                            </tr>
+                            <?php } ?>
+                        </tbody>
+                    </table>
 
 
-echo "</tr>";
-}
-echo "</table>";
+                                    </div>
+                                    <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                    <div class="tab-ctn">
+                                      <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                <thead>
+                                <tr>
+                                <th>MessengerID</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Registration Date</th>
+                                <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                while($emp = mysqli_fetch_assoc($empResult)){
+                                ?>
+                                <tr>
+                                <th scope="row"><?php echo $emp['user_id']; ?></th>
+                                <td><?php echo $emp['fname']; ?></td>
+                                <td><?php echo $emp['mname']; ?></td>
+                                <td><?php echo $emp['lname']; ?></td>
+                                <td><?php echo $emp['register_date']; ?></td>
+                            
+                                     <?php
+                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                     ?>
+                                    
+                    
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                                </table>
 
-// mysqli_close($con);
-?>
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                    <?php if($currentPage != $firstPage) { ?>
+                                    <li class="page-item">
+                                    <a class="page-link" href="?page=<?php echo $firstPage ?>" tabindex="-1" aria-label="Previous">
+                                    <span aria-hidden="true">First</span>
+                                    </a>
+                                    </li>
+                                    <?php } ?>
+                                    <?php if($currentPage >= 2) { ?>
+                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $previousPage ?>"><?php echo $previousPage ?></a></li>
+                                    <?php } ?>
+                                    <li class="page-item active"><a class="page-link" href="?page=<?php echo $currentPage ?>"><?php echo $currentPage ?></a></li>
+                                    <?php if($currentPage != $lastPage) { ?>
+                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $nextPage ?>"><?php echo $nextPage ?></a></li>
+                                    <li class="page-item">
+                                    <a class="page-link" href="?page=<?php echo $lastPage ?>" aria-label="Next">
+                                    <span aria-hidden="true">Last</span>
+                                    </a>
+                                    </li>
+                                    <?php } ?>
+                                    </ul>
+                                    </nav>
+
+
+                                    </div>
+                                </div>
+                                <div id="menu2" class="tab-pane fade">
+                                    <div class="tab-ctn">
+                                        <p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nulla sit amet est. Praesent ac the massa at ligula laoreet iaculis. Vivamus aliquet elit ac nisl. Nulla porta dolor. Cras dapibus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
+                                        <p class="tab-mg-b-0">In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nam eget dui. In ac felis quis tortor malesuadan of pretium. Phasellus consectetuer vestibulum elit. Duis lobortis massa imperdiet quam. Pellentesque commodo eros a enim. Vestibulum ante ipsum primis in faucibus orci the luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Phasellus a est. Pellentesque commodo eros a enim. Cras ultricies mi eu turpis hendrerit of fringilla. Donec mollis hendrerit risus. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Praesent egestas neque eu enim. In hac habitasse plat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End tabs area-->
 
 
 
