@@ -57,27 +57,81 @@ $(document).ready(function(){
                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <thead>
                             <tr>
-                                <th>MessengerID</th>
-                                <th>Profile Link</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Transaction Date</th>
-                                <th>Currently Viewing</th>
-                    <!--            <th>Agent</th> -->
-                            
+                            <th>user_id</th>
+                            <th>fname</th>
+                            <th>mname</th>
+                            <th>lname</th>
+                            <th>marital_status</th>
+                            <th>gender</th>
+                            <th>birthday</th>
+                            <th>educ_attain</th>
+                            <th>nationality</th>
+                            <th>address</th>
+                            <th>year_stay</th>
+                            <th>month_stay</th>
+                            <th>email</th>
+                            <th>m_number</th>
+                            <th>monthly_salary</th>
+                            <th>nature_employment</th>
+                            <th>sector</th>
+                            <th>position</th>
+                            <th>years_employment</th>
+                            <th>months_employment</th>
+                            <th>loan_purpose</th>
+                            <th>collateral_type</th>
+                            <th>tenure_months</th>
+                            <th>loan_amount_request</th>
+                            <th>source_info</th>
+                            <th>addition_income</th>
+                            <th>terms_condition</th>
+                            <th>doc1</th>
+                            <th>doc2</th>
+                            <th>doc3</th>
+                            <th>doc4</th>
+                            <th>register_date</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                            while($crow = mysqli_fetch_array($nquery)){
+                           	$result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
+                            while($row = mysqli_fetch_array($result))
                             ?>
                             <tr class="odd gradeX">
-                                <td><?php echo $crow['MessengerId']; ?></td>
-                                <td><?php echo $crow['Profile_pic']; ?></td>
-                                <td><?php echo $crow['Fname']; ?></td>
-                                <td><?php echo $crow['Lname']; ?></td>
-                                <td><?php echo $crow['LastActive']; ?></td>
-                                <td><?php echo $crow['Tag']; ?></td>
+                                <!-- <td><?php echo ; ?></td> -->
+                                <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['fname']; ?></td>
+                                <td><?php echo $row['mname']; ?></td>
+                                <td><?php echo $row['lname']; ?></td>
+                                <td><?php echo $row['marital_status']; ?></td>
+                                <td><?php echo $row['gender']; ?></td>
+                                <td><?php echo $row['birthday']; ?></td>
+                                <td><?php echo $row['educ_attain']; ?></td>
+                                <td><?php echo $row['nationality']; ?></td>
+                                <td><?php echo $row['address']; ?></td>
+                                <td><?php echo $row['year_stay']; ?></td>
+                                <td><?php echo $row['month_stay']; ?></td>
+                                <td><?php echo $row['email']; ?></td>
+                                <td><?php echo $row['m_number']; ?></td>
+                                <td><?php echo $row['monthly_salary']; ?></td>
+                                <td><?php echo $row['nature_employment']; ?></td>
+                                <td><?php echo $row['sector']; ?></td>
+                                <td><?php echo $row['position']; ?></td>
+                                <td><?php echo $row['years_employment']; ?></td>
+                                <td><?php echo $row['months_employment']; ?></td>
+                                <td><?php echo $row['loan_purpose']; ?></td>
+                                <td><?php echo $row['collateral_type']; ?></td>
+                                <td><?php echo $row['tenure_months']; ?></td>
+                                <td><?php echo $row['loan_amount_request']; ?></td>
+                                <td><?php echo $row['source_info']; ?></td>
+                                <td><?php echo $row['addition_income']; ?></td>
+                                <td><?php echo $row['terms_condition']; ?></td>
+                                <td><?php echo $row['doc1']; ?></td>
+                                <td><?php echo $row['doc2']; ?></td>
+                                <td><?php echo $row['doc3']; ?></td>
+                                <td><?php echo $row['doc4']; ?></td>
+                                <td><?php echo $row['register_date']; ?></td>
+
+
                                 
                                 <!--  -->
                             </tr>
