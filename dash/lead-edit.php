@@ -39,10 +39,10 @@ $(document).ready(function(){
 
 
 <?php
-
 $result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
+?>
 
-echo "<table border='1'>
+<table border='0' align="center">
 <tr>
 <th>user_id</th>
 <th>fname</th>
@@ -76,50 +76,53 @@ echo "<table border='1'>
 <th>doc3</th>
 <th>doc4</th>
 <th>register_date</th>
-
 </tr>";
 
+<?php
 while($row = mysqli_fetch_array($result))
 {
-echo "<tr>";
-echo "<td>" . $row['user_id'] . "</td>";
-echo "<td>" . $row['fname'] . "</td>";
-echo "<td>" . $row['mname'] . "</td>";
-echo "<td>" . $row['lname'] . "</td>";
-echo "<td>" . $row['marital_status'] . "</td>";
-echo "<td>" . $row['gender'] . "</td>";
-echo "<td>" . $row['birthday'] . "</td>";
-echo "<td>" . $row['educ_attain'] . "</td>";
-echo "<td>" . $row['nationality'] . "</td>";
-echo "<td>" . $row['address'] . "</td>";
-echo "<td>" . $row['year_stay'] . "</td>";
-echo "<td>" . $row['month_stay'] . "</td>";
-echo "<td>" . $row['email'] . "</td>";
-echo "<td>" . $row['m_number'] . "</td>";
-echo "<td>" . $row['monthly_salary'] . "</td>";
-echo "<td>" . $row['nature_employment'] . "</td>";
-echo "<td>" . $row['sector'] . "</td>";
-echo "<td>" . $row['position'] . "</td>";
-echo "<td>" . $row['years_employment'] . "</td>";
-echo "<td>" . $row['months_employment'] . "</td>";
-echo "<td>" . $row['loan_purpose'] . "</td>";
-echo "<td>" . $row['collateral_type'] . "</td>";
-echo "<td>" . $row['tenure_months'] . "</td>";
-echo "<td>" . $row['loan_amount_request'] . "</td>";
-echo "<td>" . $row['source_info'] . "</td>";
-echo "<td>" . $row['addition_income'] . "</td>";
-echo "<td>" . $row['terms_condition'] . "</td>";
-echo "<td>" . $row['doc1'] . "</td>";
-echo "<td>" . $row['doc2'] . "</td>";
-echo "<td>" . $row['doc3'] . "</td>";
-echo "<td>" . $row['doc4'] . "</td>";
-echo "<td>" . $row['register_date'] . "</td>";
+?>
+
+    <tr>
+    <td><?php echo $row['user_id']; ?> "</td>";
+    <td><?php echo $row['fname']; ?> "</td>";
+    <td><?php echo $row['mname']; ?> "</td>";
+    <td><?php echo $row['lname']; ?> "</td>";
+    <td><?php echo $row['marital_status']; ?> "</td>";
+    <td><?php echo $row['gender']; ?> "</td>";
+    <td><?php echo $row['birthday']; ?> "</td>";
+    <td><?php echo $row['educ_attain']; ?> "</td>";
+    <td><?php echo $row['nationality']; ?> "</td>";
+    <td><?php echo $row['address']; ?> "</td>";
+    <td><?php echo $row['year_stay']; ?> "</td>";
+    <td><?php echo $row['month_stay']; ?> "</td>";
+    <td><?php echo $row['email']; ?> "</td>";
+    <td><?php echo $row['m_number']; ?> "</td>";
+    <td><?php echo $row['monthly_salary']; ?> "</td>";
+    <td><?php echo $row['nature_employment']; ?> "</td>";
+    <td><?php echo $row['sector']; ?> "</td>";
+    <td><?php echo $row['position']; ?> "</td>";
+    <td><?php echo $row['years_employment']; ?> "</td>";
+    <td><?php echo $row['months_employment']; ?> "</td>";
+    <td><?php echo $row['loan_purpose']; ?> "</td>";
+    <td><?php echo $row['collateral_type']; ?> "</td>";
+    <td><?php echo $row['tenure_months']; ?> "</td>";
+    <td><?php echo $row['loan_amount_request']; ?> "</td>";
+    <td><?php echo $row['source_info']; ?> "</td>";
+    <td><?php echo $row['addition_income']; ?> "</td>";
+    <td><?php echo $row['terms_condition']; ?> "</td>";
+    <td><?php echo $row['doc1']; ?> "</td>";
+    <td><?php echo $row['doc2']; ?> "</td>";
+    <td><?php echo $row['doc3']; ?> "</td>";
+    <td><?php echo $row['doc4']; ?> "</td>";
+    <td><?php echo $row['register_date']; ?> "</td>";
 
 
-echo "</tr>";
+</tr>
 }
-echo "</table>";
+</table>
 
+<?php
 mysqli_close($con);
 ?>
 
