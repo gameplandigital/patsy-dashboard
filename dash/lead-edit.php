@@ -130,8 +130,7 @@ $(document).ready(function(){
                                 <td><?php echo $row['doc4']; ?></td>
                                 <td><?php echo $row['register_date']; ?></td>
                             </tr>
-                            <?php } ?>
-                        </tbody>
+\                        </tbody>
                     </table>
 
 
