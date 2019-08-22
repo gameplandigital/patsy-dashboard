@@ -388,7 +388,8 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <td><?php echo $emp['register_date']; ?></td>
                             
                                      <?php
-                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                    // echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                    echo "<td><a href='#lead-edit?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
                                      ?>
                                     
                     
@@ -424,6 +425,50 @@ $empResult = mysqli_query($conn, $empSQL);
 
                                     </div>
                                 </div>
+
+
+
+
+                                <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
+                                </div>
+                                <div id="lead-edit" class="tab-pane fade">
+                                    <div class="tab-ctn">
+                                      <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                <thead>
+                                <tr>
+                                <th>MessengerID</th>
+                                <th>First Name</th>
+                                <th>Middle Name</th>
+                                <th>Last Name</th>
+                                <th>Registration Date</th>
+                                <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                while($emp = mysqli_fetch_assoc($empResult)){
+                                ?>
+                                <tr>
+                                <th scope="row"><?php echo $emp['user_id']; ?></th>
+                                <td><?php echo $emp['fname']; ?></td>
+                                <td><?php echo $emp['mname']; ?></td>
+                                <td><?php echo $emp['lname']; ?></td>
+                                <td><?php echo $emp['register_date']; ?></td>
+                            
+                                     <?php
+                                    // echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                    echo "<td><a href='#lead-edit?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                     ?>
+                                    
+                    
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                                </table>
+
+
+
+
                                 <div id="menu2" class="tab-pane fade">
                                     <div class="tab-ctn">
                                         <p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nulla sit amet est. Praesent ac the massa at ligula laoreet iaculis. Vivamus aliquet elit ac nisl. Nulla porta dolor. Cras dapibus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
