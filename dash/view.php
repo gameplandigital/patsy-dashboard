@@ -7,4 +7,4 @@ $stat->execute();
 $row = $stat->fetch();
 header("Content-Type:".$row['doc2']);
 echo $row['doc2'];
-//echo '<img src="data:image/jpeg;base64,'.base64_encode($row['data']).'"/>';
+// echo '<img src="data:image/jpeg;base64,'.base64_encode($row['data']).'"/>';
