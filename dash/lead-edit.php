@@ -232,7 +232,7 @@ $(document).ready(function(){
                                 <td><?php echo $row['doc1']; ?></td>
                                 <td><?php echo $row['doc2']; ?></td>
                                 <td><?php echo $row['doc3']; ?></td>
-                                <td><?php echo $row['doc4']; ?></td>
+                                <td><a href=<?php echo $row['doc4']; ?>></a></td>
                                 <td><?php echo $row['register_date']; ?></td>                            </tr>
                             <?php } ?>
                         </tbody>
