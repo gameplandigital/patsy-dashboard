@@ -324,6 +324,7 @@ $empResult = mysqli_query($conn, $empSQL);
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#menu1">User Info.</a></li>
                             </ul>
+                            <div class="tab-content tab-custom-st">
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="tab-ctn">
                                       <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
