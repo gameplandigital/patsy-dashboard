@@ -164,7 +164,7 @@ $(document).ready(function(){
                         <thead>
                             <tr>
                             <th>User ID</th>
-                            <th>First Name</th>
+                            <td>First Name</td>
                             <th>Middle Name</th>
                             <th>Last Name</th>
                             <th>Marital Status</th>
@@ -204,7 +204,7 @@ $(document).ready(function(){
                             <tr class="odd gradeX">
                             <td><?php echo $row['user_id']; ?></td>
                                 <td><?php echo $row['fname']; ?></td>
-                                <td><?php echo $row['mname']; ?></td>
+                                <th><?php echo $row['mname']; ?></th>
                                 <td><?php echo $row['lname']; ?></td>
                                 <td><?php echo $row['marital_status']; ?></td>
                                 <td><?php echo $row['gender']; ?></td>
