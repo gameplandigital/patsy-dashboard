@@ -7,7 +7,7 @@
 if(isset($_GET['doc2']))
 	{
 		$id = $_GET['doc2'];
-		$stat = $db->prepare("SELECT * FROM rfc_apply WHRE doc2=?");
+		$stat = $db->prepare("SELECT * FROM rfc_apply WHERE doc2=?");
 		$stat->bindParam(1, $doc2);
 		$stat->execute();
 		$data = $stat->fetch();
