@@ -11,7 +11,7 @@
 	header('Expires: 0');
 	header('Cache-Control: must-revalidate');
 	header('Pragma: public');
-	header('Content-Length:'.filesize($file));
+	header('Content-Length:'.basename($file));
 	
 
 	
@@ -36,7 +36,6 @@
     //     fclose($handle);
     // } else {
 		readfile($file);
-		exit;
 
     //}
 	?>
