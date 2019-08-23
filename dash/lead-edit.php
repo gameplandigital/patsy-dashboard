@@ -3,7 +3,36 @@
 	include("db_connect.php");
   $user_id = $_GET['user_id'];
   include('conn.php');
+
+
+
+
+  if(isset($_POST['search']))
+  {
+    $valueToSearh = $_POST['valueToSearh']; 
+    $query = "SELECT * FROM rfc_users WHERE firstname LIKE '%".$valueToSearh."%' OR lastname LIKE '%".$valueToSearh."%' OR middlename LIKE '%".$valueToSearh."' OR status LIKE '%".$valueToSearh."%' OR agent LIKE '%".$valueToSearh."%'";
+    $nquery = filterRecord($query);
+  }
+  else
+  {
+    $query = "SELECT *FROM rfc_users";
+    $nquery = filterRecord($query);
+  }
+  
+  function filterRecord($query)
+  {
+    include("config.php");
+    $filter_result = mysqli_query($mysqli, $query);
+    return $filter_result;
+  }
+
+
+
+
 ?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,8 +155,7 @@ $(document).ready(function(){
                         </div>
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
-                                 <li><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
+                                <li class="active"><a data-toggle="tab" href="#home">User information</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active">
