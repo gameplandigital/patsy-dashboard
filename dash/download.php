@@ -1,7 +1,7 @@
 <?php
    include('conn.php');
 
-	$filePath=urldecode($_REQUEST['rfc_apply']);
+	$filePath=urldecode($_REQUEST['doc2']);
  
     if(file_exists($filePath)) {
         $fileName = basename($filePath);
