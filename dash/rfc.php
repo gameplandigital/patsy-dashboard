@@ -363,6 +363,11 @@ $empResult = mysqli_query($conn, $empSQL);
                                     </div>
                                     <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
                                 </div>
+
+
+
+
+                                
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="tab-ctn">
                                       <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
