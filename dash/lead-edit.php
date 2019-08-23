@@ -331,14 +331,38 @@ $empResult = mysqli_query($conn, $empSQL);
                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <thead>
                             <tr>
-                                <th>MessengerID</th>
-                                <th>Profile Link</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Transaction Date</th>
-                                <th>Currently Viewing</th>
-                    <!--            <th>Agent</th> -->
-                            
+                            <th>user_id</th>
+                            <th>fname</th>
+                            <th>mname</th>
+                            <th>lname</th>
+                            <th>marital_status</th>
+                            <th>gender</th>
+                            <th>birthday</th>
+                            <th>educ_attain</th>
+                            <th>nationality</th>
+                            <th>address</th>
+                            <th>year_stay</th>
+                            <th>month_stay</th>
+                            <th>email</th>
+                            <th>m_number</th>
+                            <th>monthly_salary</th>
+                            <th>nature_employment</th>
+                            <th>sector</th>
+                            <th>position</th>
+                            <th>years_employment</th>
+                            <th>months_employment</th>
+                            <th>loan_purpose</th>
+                            <th>collateral_type</th>
+                            <th>tenure_months</th>
+                            <th>loan_amount_request</th>
+                            <th>source_info</th>
+                            <th>addition_income</th>
+                            <th>terms_condition</th>
+                            <th>doc1</th>
+                            <th>doc2</th>
+                            <th>doc3</th>
+                            <th>doc4</th>
+                            <th>register_date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -424,12 +448,7 @@ $empResult = mysqli_query($conn, $empSQL);
 
                                     </div>
                                 </div>
-                                <div id="menu2" class="tab-pane fade">
-                                    <div class="tab-ctn">
-                                        <p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nulla sit amet est. Praesent ac the massa at ligula laoreet iaculis. Vivamus aliquet elit ac nisl. Nulla porta dolor. Cras dapibus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                                        <p class="tab-mg-b-0">In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nam eget dui. In ac felis quis tortor malesuadan of pretium. Phasellus consectetuer vestibulum elit. Duis lobortis massa imperdiet quam. Pellentesque commodo eros a enim. Vestibulum ante ipsum primis in faucibus orci the luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Phasellus a est. Pellentesque commodo eros a enim. Cras ultricies mi eu turpis hendrerit of fringilla. Donec mollis hendrerit risus. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Praesent egestas neque eu enim. In hac habitasse plat.</p>
-                                    </div>
-                                </div>
+              
                             </div>
                         </div>
                     </div>
