@@ -199,7 +199,7 @@ $(document).ready(function(){
                         </thead>
                         <tbody>
                             <?php
-                            while($crow = mysqli_fetch_array($nquery)){
+                            while($row = mysqli_fetch_array($nquery)){
                             ?>
                             <tr class="odd gradeX">
                             <td><?php echo $row['user_id']; ?></td>
