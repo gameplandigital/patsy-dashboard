@@ -150,7 +150,7 @@ $(document).ready(function(){
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
-                            <h2><?php echo $nquery['lname']; ?><?php echo $nquery['fname']; ?>INFORMATION</h2>
+                            <h2>INFORMATION</h2>
                             
                         </div>
                         <div class="widget-tabs-list">
