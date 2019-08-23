@@ -10,12 +10,12 @@
   if(isset($_POST['search']))
   {
     $valueToSearh = $_POST['valueToSearh']; 
-    $query = "SELECT * FROM rfc_apply WHERE user_id ='$id'";
+    $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
   }
   else
   {
-    $query = "SELECT * FROM rfc_apply WHERE user_id ='$id'";
+    $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
   }
   
