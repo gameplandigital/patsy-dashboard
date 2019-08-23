@@ -150,7 +150,7 @@ $(document).ready(function(){
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
-                            <h2>USER LOGS</h2>
+                            <h2><?php echo $nquery['lname']; ?><?php echo $nquery['fname']; ?>INFORMATION</h2>
                             
                         </div>
                         <div class="widget-tabs-list">
@@ -163,15 +163,15 @@ $(document).ready(function(){
                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <thead>
                             <tr>
-                            <th>user_id</th>
-                            <th>fname</th>
-                            <th>mname</th>
-                            <th>lname</th>
-                            <th>marital_status</th>
-                            <th>gender</th>
-                            <th>birthday</th>
-                            <th>educ_attain</th>
-                            <th>nationality</th>
+                            <th>User ID</th>
+                            <th>First Name</th>
+                            <th>Middle Name</th>
+                            <th>Last Name</th>
+                            <th>Marital Status</th>
+                            <th>Gender</th>
+                            <th>Birthday</th>
+                            <th>Educational Attainment</th>
+                            <th>Nationality</th>
                             <th>address</th>
                             <th>year_stay</th>
                             <th>month_stay</th>
