@@ -1,5 +1,6 @@
 <?php
-	include("session.php");
+  include("session.php");
+  include("conn.php");
 	include("db_connect.php");
 	$user_id = $_GET['user_id'];
 ?>
