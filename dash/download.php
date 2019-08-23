@@ -1,21 +1,29 @@
 <?php
-   include('conn.php');
+	$file = './download/'.$_GET['id'];
+   	$title=$_GET['id'];
 
-	$filePath=urldecode($_REQUEST['file']);
- 
-    if(file_exists($filePath)) {
-        $fileName = basename($filePath);
-        $fileSize = filesize($filePath);
- 
-        header("Cache-Control: private");
-        header("Content-Type: application/stream");
-        header("Content-Length: ".$fileSize);
-        header("Content-Disposition: attachment; filename=".$fileName);
- 
-        readfile ($filePath);                   
-        exit();
+    header("Pragma: public");
+    header('Content-disposition: attachment; filename='.$title);
+  
+    
+    header('Content-Transfer-Encoding: binary');
+    ob_clean();
+    flush();
+
+    $chunksize = 1 * (1024 * 1024); // how many bytes per chunk
+    if (filesize($file) > $chunksize) {
+        $handle = fopen($file, 'rb');
+        $buffer = '';
+
+        while (!feof($handle)) {
+            $buffer = fread($handle, $chunksize);
+            echo $buffer;
+            ob_flush();
+            flush();
+        }
+
+        fclose($handle);
+    } else {
+        readfile($file);
     }
-    else {
-        die('The provided file path is not valid.');
-    }
-?>
+	?>
