@@ -13,7 +13,7 @@ if(isset($_GET['doc2']))
 		$stat->execute();
 		$data = $stat->fetch();
 
-		$file = 'media/'.$data['doc2']
+		$file = 'media/'.$data['doc2'];
 
 		if(file_exists($file))
 		{
