@@ -1,10 +1,12 @@
 <?php
-	$file = './download/'.$_GET['doc2'];
-   	$title=$_GET['doc2'];
+	$file = './download/'.$_GET['file'];
+   	$title=$_GET['file'];
 
     header("Pragma: public");
     header('Content-disposition: attachment; filename='.$title);
   
+
+	
     
     header('Content-Transfer-Encoding: binary');
     ob_clean();
