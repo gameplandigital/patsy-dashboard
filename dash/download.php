@@ -1,6 +1,6 @@
 <?php
-	$file = './download/'.$_GET['id'];
-   	$title=$_GET['id'];
+	$file = './download/'.$_GET['doc2'];
+   	$title=$_GET['doc2'];
 
     header("Pragma: public");
     header('Content-disposition: attachment; filename='.$title);
