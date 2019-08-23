@@ -164,7 +164,7 @@ $(document).ready(function(){
                         <thead>
                             <tr>
                             <th>User ID</th>
-                            <td>First Name</td>
+                            <th>First Name</th>
                             <th>Middle Name</th>
                             <th>Last Name</th>
                             <th>Marital Status</th>
@@ -202,9 +202,9 @@ $(document).ready(function(){
                             while($row = mysqli_fetch_array($nquery)){
                             ?>
                             <tr class="odd gradeX">
-                            <td><?php echo $row['user_id']; ?></td>
-                                <td><?php echo $row['fname']; ?></td>
-                                <th><?php echo $row['mname']; ?></th>
+                            <td>User ID<?php echo $row['user_id']; ?></td>
+                                <td>First Name<?php echo $row['fname']; ?></td>
+                                <td><?php echo $row['mname']; ?></td>
                                 <td><?php echo $row['lname']; ?></td>
                                 <td><?php echo $row['marital_status']; ?></td>
                                 <td><?php echo $row['gender']; ?></td>
