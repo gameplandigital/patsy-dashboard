@@ -109,6 +109,17 @@ $(document).ready(function(){
 </head>
 <!-- HEADER -->
 
+
+<style>
+thead, tbody { display: block; }
+
+tbody {
+    height: 100px;       /* Just for the demo          */
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: hidden;  /* Hide the horizontal scroll */
+}
+</style>
+
 <div class="header-top-area">
         <div class="container">
             <div class="row">
@@ -202,8 +213,8 @@ $(document).ready(function(){
                             while($row = mysqli_fetch_array($nquery)){
                             ?>
                             <tr class="odd gradeX">
-                            <td>User ID<?php echo $row['user_id']; ?></td>
-                                <td>First Name<?php echo $row['fname']; ?></td>
+                            <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['fname']; ?></td>
                                 <td><?php echo $row['mname']; ?></td>
                                 <td><?php echo $row['lname']; ?></td>
                                 <td><?php echo $row['marital_status']; ?></td>
