@@ -5,7 +5,7 @@
     // header("Pragma: public");
     // header('Content-disposition: attachment; filename='.$title);
   
-
+	if(file_exists($file)){
 	header('Content-Description: File Transfer');
 	header('Content-Type: application/octet-stream');
 	header('Content-Disposition: attachment; filename='.basename($file));
@@ -35,6 +35,9 @@
 
     //     fclose($handle);
     // } else {
-        readfile($file);
+		readfile($file);
+		exit;
+	}
+
     //}
 	?>
