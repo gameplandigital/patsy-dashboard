@@ -1,496 +1,58 @@
 <?php
-    include("session.php");
-
-    if(isset($_POST['search']))
-  {
-    $valueToSearh = $_POST['valueToSearh']; 
-    $query = "SELECT * FROM rfc_users WHERE firstname LIKE '%".$valueToSearh."%' OR lastname LIKE '%".$valueToSearh."%' OR middlename LIKE '%".$valueToSearh."' OR status LIKE '%".$valueToSearh."%' OR agent LIKE '%".$valueToSearh."%'";
-    $nquery = filterRecord($query);
-  }
-  else
-  {
-    $query = "SELECT *FROM rfc_users";
-    $nquery = filterRecord($query);
-  }
-  
-  function filterRecord($query)
-  {
-    include("config.php");
-    $filter_result = mysqli_query($mysqli, $query);
-    return $filter_result;
-  }
-    
+	include("session.php");
+	include("db_connect.php");
+	$user_id = $_GET['user_id'];
 ?>
-<?php include('pagination.php'); ?>
-
-<?php
-
-  include('conn.php');
-  
-  date_default_timezone_set("Asia/Manila");
-$date=date('F j, Y g:i:a');
-
-  $uquery=mysqli_query($conn,"SELECT * FROM `login_users` WHERE username='".$_SESSION['user']."'");
-  $urow=mysqli_fetch_assoc($uquery);
-?>
-
-
-<!-- Monitoring -->
-
-        <?php
-     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
-     $username='patsydigital01';
-     $password='pAtsy06072018';
-     $database_name='patsy_db';
-
-
-      $con = mysqli_connect($host, $username, $password, $database_name); 
-
-      $sql="SELECT count(id) AS total FROM rfc_users WHERE BotTag='RFC'";
-      $result=mysqli_query($con,$sql);
-      $values=mysqli_fetch_assoc($result);
-      $Total_New=$values['total'];
-
-                              
-      ?>
-
-
-
-        <?php
-     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
-     $username='patsydigital01';
-     $password='pAtsy06072018';
-     $database_name='patsy_db';
-
-
-      $con = mysqli_connect($host, $username, $password, $database_name); 
-
-      $sql="SELECT count(id) AS total FROM rfc_users WHERE BusinessTag= 'BUSINESS_LOAN'";
-      $result=mysqli_query($con,$sql);
-      $values=mysqli_fetch_assoc($result);
-      $Total_Callback=$values['total'];
-
-                              
-      ?>
-
-
-         <?php
-     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
-     $username='patsydigital01';
-     $password='pAtsy06072018';
-     $database_name='patsy_db';
-
-
-      $con = mysqli_connect($host, $username, $password, $database_name); 
-
-      $sql="SELECT count(id) AS total FROM rfc_users WHERE MultiTag= 'MULTI_PURPOSE_LOAN'";
-      $result=mysqli_query($con,$sql);
-      $values=mysqli_fetch_assoc($result);
-      $Total_InCorrect=$values['total'];
-
-                              
-      ?>
-
-           <?php
-     $host='patsydb.com4k2xtorpw.ap-southeast-1.rds.amazonaws.com';
-     $username='patsydigital01';
-     $password='pAtsy06072018';
-     $database_name='patsy_db';
-
-
-      $con = mysqli_connect($host, $username, $password, $database_name); 
-
-      $sql="SELECT count(id) AS total FROM rfc_users WHERE FinancingTag= 'FINANCING_LOAN'";
-      $result=mysqli_query($con,$sql);
-      $values=mysqli_fetch_assoc($result);
-      $Total_Meeting=$values['total'];
-
-                              
-      ?>
-
-
-<!-- END Monitoring -->
-
-
-<!-- PAGINATION - BETA -->
-
-
-
-<?php
-include_once("conn.php");
-$showRecordPerPage = 5;
-if(isset($_GET['page']) && !empty($_GET['page'])){
-$currentPage = $_GET['page'];
-}else{
-$currentPage = 1;
-}
-$startFrom = ($currentPage * $showRecordPerPage) - $showRecordPerPage;
-$totalEmpSQL = "SELECT * FROM rfc_apply";
-$allEmpResult = mysqli_query($conn, $totalEmpSQL);
-$totalEmployee = mysqli_num_rows($allEmpResult);
-$lastPage = ceil($totalEmployee/$showRecordPerPage);
-$firstPage = 1;
-$nextPage = $currentPage + 1;
-$previousPage = $currentPage - 1;
-$empSQL = "SELECT *
-FROM `rfc_apply` LIMIT $startFrom, $showRecordPerPage";
-$empResult = mysqli_query($conn, $empSQL);
-?> 
-
-
-
-
-
-
-<!-- --> 
-
-
-
-<!doctype html>
-<html class="no-js" lang="ca">
-
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>PATSY | RFC</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-        ============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Google Fonts
-        ============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- font awesome CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- owl.carousel CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/owl.theme.css">
-    <link rel="stylesheet" href="css/owl.transitions.css">
-    <!-- meanmenu CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/meanmenu/meanmenu.min.css">
-    <!-- Notika icon CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/notika-custom-icon.css">
-    <!-- mCustomScrollbar CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- animate CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- normalize CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <!-- wave CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/wave/waves.min.css">
-    <link rel="stylesheet" href="css/wave/button.css">
-    <!-- main CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/main.css">
-    <!-- style CSS
-        ============================================ -->
-    <link rel="stylesheet" href="style.css">
-    <!-- responsive CSS
-        ============================================ -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- modernizr JS
-        ============================================ -->
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/mystyle1.css" /> <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("id");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
+</script>
+
 </head>
-
 <body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-    <!-- Start Header Top Area -->
-    <div class="header-top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="logo-area">
-                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
-                           
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Header Top Area -->
+<div class="icon-bar">
+  <a href="home.php"><i class="fa fa-home"></i></a> 
+  <a href="lead_users.php"><i class="fa fa-user"></i></a> 
+  <a class="active" href="lead-register.php"><i class="fa fa-registered"></i></a>
+  <a href="logout.php"><i class="fa fa-power-off"></i></a> 
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <h2>Update</h2> -->
+<hr/>
 
-    <br>
+<form action="update_lead.php" method="POST">
+  <div class="container">
+  <?php
+	$result = mysqli_query($mysqli,"SELECT * FROM rfc_apply WHERE user_id ='$id'");
+	while($row = mysqli_fetch_array($result))
+	{
 
-       <!-- Start Status area -->
-    <div class="notika-status-area">
-        <center><div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
-                            <p>Current Bot Subscriber</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_Callback; ?></span></h2>
-                            <p>Business Loans Visit</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
-                            <p>Multi Loans Visit</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_Meeting; ?></span></h2>
-                            <p>Financing Loans Visit</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div></center>
-    </div>
-    <!-- End Status area-->
+    echo"<input type='text' placeholder='Company Name' name='fname' value='{$row['fname']}' required>";
+    echo"<input type='text' placeholder='Contact Person' name='middlename' value='{$row['mname']}' required>";
+    echo"<input type='number' placeholder='Contact Number' name='lastname' value='{$row['lname']}' required>";
+    echo"<input type='text' name='c_location' value='{$row['c_location']}'required>";
+  
+	echo"</div>";
+	}
+  ?>
+  </div>
+</form>
 
 
 
-
-    <br>
-
- 
-    <!-- Breadcomb area Start-->
-    <div class="breadcomb-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="breadcomb-list">
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <div class="breadcomb-wp">
-                                    <div class="breadcomb-icon">
-                                        <i class="notika-icon notika-app"></i>
-                                    </div>
-                                    <div class="breadcomb-ctn">
-                                        <br>
-                                        <h2>Welcome <?php echo $urow['firstname']; ?>,</h2>
-                                        <br>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
-                             <!--    <div class="breadcomb-report">
-                                    <button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
-                                </div> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Breadcomb area End-->
-    <!-- Start tabs area-->
-    <div class="tabs-info-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="widget-tabs-int">
-                        <div class="tab-hd">
-                            <h2>USER LOGS</h2>
-                            
-                        </div>
-                        <div class="widget-tabs-list">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#menu1">User Info.</a></li>
-                            </ul>
-                            <div class="tab-content tab-custom-st">
-                                <div id="menu1" class="tab-pane fade">
-                                    <div class="tab-ctn">
-                                      <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-                                <thead>
-                                <tr>
-                                <th>user_id</th>
-                                  <th>fname</th>
-                                  <th>mname</th>
-                                  <th>lname</th>
-                                  <th>marital_status</th>
-                                  <th>gender</th>
-                                  <th>birthday</th>
-                                  <th>educ_attain</th>
-                                  <th>nationality</th>
-                                  <th>address</th>
-                                  <th>year_stay</th>
-                                  <th>month_stay</th>
-                                  <th>email</th>
-                                  <th>m_number</th>
-                                  <th>monthly_salary</th>
-                                  <th>nature_employment</th>
-                                  <th>sector</th>
-                                  <th>position</th>
-                                  <th>years_employment</th>
-                                  <th>months_employment</th>
-                                  <th>loan_purpose</th>
-                                  <th>collateral_type</th>
-                                  <th>tenure_months</th>
-                                  <th>loan_amount_request</th>
-                                  <th>source_info</th>
-                                  <th>addition_income</th>
-                                  <th>terms_condition</th>
-                                  <th>doc1</th>
-                                  <th>doc2</th>
-                                  <th>doc3</th>
-                                  <th>doc4</th>
-                                  <th>register_date</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                while($emp = mysqli_fetch_assoc($empResult)){
-                                ?>
-                                <tr>
-                                <th scope="row"><?php echo $emp['user_id']; ?></th>
-                                <td><?php echo $emp['fname']; ?></td>
-                                <td><?php echo $emp['mname']; ?></td>
-                                <td><?php echo $emp['lname']; ?></td>
-                                <td><?php echo $emp['register_date']; ?></td>
-                            
-                                     <?php
-                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
-                                     ?>
-                                    
-                    
-                                </tr>
-                                <?php } ?>
-                                </tbody>
-                                </table>
-
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                    <?php if($currentPage != $firstPage) { ?>
-                                    <li class="page-item">
-                                    <a class="page-link" href="?page=<?php echo $firstPage ?>" tabindex="-1" aria-label="Previous">
-                                    <span aria-hidden="true">First</span>
-                                    </a>
-                                    </li>
-                                    <?php } ?>
-                                    <?php if($currentPage >= 2) { ?>
-                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $previousPage ?>"><?php echo $previousPage ?></a></li>
-                                    <?php } ?>
-                                    <li class="page-item active"><a class="page-link" href="?page=<?php echo $currentPage ?>"><?php echo $currentPage ?></a></li>
-                                    <?php if($currentPage != $lastPage) { ?>
-                                    <li class="page-item"><a class="page-link" href="?page=<?php echo $nextPage ?>"><?php echo $nextPage ?></a></li>
-                                    <li class="page-item">
-                                    <a class="page-link" href="?page=<?php echo $lastPage ?>" aria-label="Next">
-                                    <span aria-hidden="true">Last</span>
-                                    </a>
-                                    </li>
-                                    <?php } ?>
-                                    </ul>
-                                    </nav>
-
-
-                                    </div>
-                                </div>
-              
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End tabs area-->
-    <!-- Start Footer area-->
-    <div class="footer-copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="footer-copy-right">
-                        <p>Copyright © 2019 
-. All rights reserved. PATSY.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Footer area-->
-    <!-- jquery
-        ============================================ -->
-    <script src="js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-        ============================================ -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- wow JS
-        ============================================ -->
-    <script src="js/wow.min.js"></script>
-    <!-- price-slider JS
-        ============================================ -->
-    <script src="js/jquery-price-slider.js"></script>
-    <!-- owl.carousel JS
-        ============================================ -->
-    <script src="js/owl.carousel.min.js"></script>
-    <!-- scrollUp JS
-        ============================================ -->
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <!-- meanmenu JS
-        ============================================ -->
-    <script src="js/meanmenu/jquery.meanmenu.js"></script>
-    <!-- counterup JS
-        ============================================ -->
-    <script src="js/counterup/jquery.counterup.min.js"></script>
-    <script src="js/counterup/waypoints.min.js"></script>
-    <script src="js/counterup/counterup-active.js"></script>
-    <!-- sparkline JS
-        ============================================ -->
-    <script src="js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="js/sparkline/sparkline-active.js"></script>
-    <!-- knob JS
-        ============================================ -->
-    <script src="js/knob/jquery.knob.js"></script>
-    <script src="js/knob/jquery.appear.js"></script>
-    <script src="js/knob/knob-active.js"></script>
-    <!-- mCustomScrollbar JS
-        ============================================ -->
-    <script src="js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <!-- flot JS
-        ============================================ -->
-    <script src="js/flot/flot-widget-anatic-active.js"></script>
-    <script src="js/flot/chart-tooltips.js"></script>
-    <script src="js/flot/flot-active.js"></script>
-    <!--  wave JS
-        ============================================ -->
-    <script src="js/wave/waves.min.js"></script>
-    <script src="js/wave/wave-active.js"></script>
-    <!-- plugins JS
-        ============================================ -->
-    <script src="js/plugins.js"></script>
-    <!-- main JS
-        ============================================ -->
-    <script src="js/main.js"></script>
-    <!-- tawk chat JS
-        ============================================ -->
-    <script src="js/tawk-chat.js"></script>
-</body>
-
-</html>
