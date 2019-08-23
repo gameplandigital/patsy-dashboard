@@ -322,82 +322,45 @@ $empResult = mysqli_query($conn, $empSQL);
                         </div>
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
-                                 <li><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
+                                <li class="active"><a data-toggle="tab" href="#menu1">User Info.</a></li>
                             </ul>
-                            <div class="tab-content tab-custom-st">
-                                <div id="home" class="tab-pane fade in active">
-                                    <div class="tab-ctn">
-                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-                        <thead>
-                            <tr>
-                            <th>user_id</th>
-                            <th>fname</th>
-                            <th>mname</th>
-                            <th>lname</th>
-                            <th>marital_status</th>
-                            <th>gender</th>
-                            <th>birthday</th>
-                            <th>educ_attain</th>
-                            <th>nationality</th>
-                            <th>address</th>
-                            <th>year_stay</th>
-                            <th>month_stay</th>
-                            <th>email</th>
-                            <th>m_number</th>
-                            <th>monthly_salary</th>
-                            <th>nature_employment</th>
-                            <th>sector</th>
-                            <th>position</th>
-                            <th>years_employment</th>
-                            <th>months_employment</th>
-                            <th>loan_purpose</th>
-                            <th>collateral_type</th>
-                            <th>tenure_months</th>
-                            <th>loan_amount_request</th>
-                            <th>source_info</th>
-                            <th>addition_income</th>
-                            <th>terms_condition</th>
-                            <th>doc1</th>
-                            <th>doc2</th>
-                            <th>doc3</th>
-                            <th>doc4</th>
-                            <th>register_date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while($crow = mysqli_fetch_array($nquery)){
-                            ?>
-                            <tr class="odd gradeX">
-                                <td><?php echo $crow['MessengerId']; ?></td>
-                                <td><?php echo $crow['Profile_pic']; ?></td>
-                                <td><?php echo $crow['Fname']; ?></td>
-                                <td><?php echo $crow['Lname']; ?></td>
-                                <td><?php echo $crow['LastActive']; ?></td>
-                                <td><?php echo $crow['Tag']; ?></td>
-                                
-                                <!--  -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-
-
-                                    </div>
-                                    <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
-                                </div>
                                 <div id="menu1" class="tab-pane fade">
                                     <div class="tab-ctn">
                                       <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                                 <thead>
                                 <tr>
-                                <th>MessengerID</th>
-                                <th>First Name</th>
-                                <th>Middle Name</th>
-                                <th>Last Name</th>
-                                <th>Registration Date</th>
-                                <th>View</th>
+                                <th>user_id</th>
+                                  <th>fname</th>
+                                  <th>mname</th>
+                                  <th>lname</th>
+                                  <th>marital_status</th>
+                                  <th>gender</th>
+                                  <th>birthday</th>
+                                  <th>educ_attain</th>
+                                  <th>nationality</th>
+                                  <th>address</th>
+                                  <th>year_stay</th>
+                                  <th>month_stay</th>
+                                  <th>email</th>
+                                  <th>m_number</th>
+                                  <th>monthly_salary</th>
+                                  <th>nature_employment</th>
+                                  <th>sector</th>
+                                  <th>position</th>
+                                  <th>years_employment</th>
+                                  <th>months_employment</th>
+                                  <th>loan_purpose</th>
+                                  <th>collateral_type</th>
+                                  <th>tenure_months</th>
+                                  <th>loan_amount_request</th>
+                                  <th>source_info</th>
+                                  <th>addition_income</th>
+                                  <th>terms_condition</th>
+                                  <th>doc1</th>
+                                  <th>doc2</th>
+                                  <th>doc3</th>
+                                  <th>doc4</th>
+                                  <th>register_date</th>
                                 </tr>
                                 </thead>
                                 <tbody>
