@@ -3,7 +3,7 @@ include("db_connect.php");
 if(isset($_GET['doc2']))
 	{
 		$id = $_GET['doc2'];
-		$stat = $db->prepare("SELECT * FROM rfc_apply WHERE doc2=?");
+		$stat = $db->prepare("select * from rfc_apply where doc2=?");
 		$stat->bindParam(1, $id);
 		$stat->execute();
 		$data = $stat->fetch();
