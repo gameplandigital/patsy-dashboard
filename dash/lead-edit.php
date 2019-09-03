@@ -110,56 +110,54 @@ $(document).ready(function(){
 <!-- HEADER -->
 
 
-<style>
+    <style>
+        table {
+        width:70%; 
+        margin-left:15%; 
+        margin-right: auto;
 
+        display: block;
+        height: 400px;
+        overflow-y: scroll;
 
-table {
-  width:70%; 
-  margin-left:15%; 
-  margin-right:15%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+        }
 
-  display: block;
-  height: 400px;
-  overflow-y: scroll;
+        th, td {
+        text-align: left;
+        padding: 8px;
+        }
 
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
+        tr:nth-child(even){background-color: #f2f2f2}
+    </style>
 
-th, td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even){background-color: #f2f2f2}
-</style>
-
-<div class="header-top-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="logo-area">
-                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+    <div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="logo-area">
+                            <a href="#"><img src="img/logo/logo.png" alt="" /></a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
-                           
-                        </ul>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                        <div class="header-top-menu">
+                            <ul class="nav navbar-nav notika-top-nav">
+                            
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-<!-- END HEADER -->
+    <!-- END HEADER -->
 
-<body>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<!-- <h2>Update</h2> -->
-<hr/>
+    <body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <h2>Update</h2> -->
+    <hr/>
 
 
 
@@ -172,7 +170,6 @@ tr:nth-child(even){background-color: #f2f2f2}
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
                             <h2>INFORMATION</h2>
-                            
                         </div>
                         <div class="widget-tabs-list" >
                             <ul class="nav nav-tabs">
