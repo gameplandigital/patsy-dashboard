@@ -429,12 +429,6 @@ $empResult = mysqli_query($conn, $empSQL);
 
                                     </div>
                                 </div>
-                                <div id="menu2" class="tab-pane fade">
-                                    <div class="tab-ctn">
-                                        <p>Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nulla sit amet est. Praesent ac the massa at ligula laoreet iaculis. Vivamus aliquet elit ac nisl. Nulla porta dolor. Cras dapibus. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                                        <p class="tab-mg-b-0">In hac habitasse platea dictumst. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nam eget dui. In ac felis quis tortor malesuadan of pretium. Phasellus consectetuer vestibulum elit. Duis lobortis massa imperdiet quam. Pellentesque commodo eros a enim. Vestibulum ante ipsum primis in faucibus orci the luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Phasellus a est. Pellentesque commodo eros a enim. Cras ultricies mi eu turpis hendrerit of fringilla. Donec mollis hendrerit risus. Vestibulum turpis sem, aliquet eget, lobortis pellentesque, rutrum eu, nisl. Praesent egestas neque eu enim. In hac habitasse plat.</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -511,7 +505,6 @@ $empResult = mysqli_query($conn, $empSQL);
     <script src="js/main.js"></script>
     <!-- tawk chat JS
         ============================================ -->
-    <script src="js/tawk-chat.js"></script>
 </body>
 
 </html>
