@@ -116,12 +116,12 @@ $(document).ready(function(){
 
 
 table {
-  width:70%; 
+  width:90%; 
   margin-left:28%; 
   margin-right:15%;
 
   display: block;
-  height: 400px;
+  height: 550px;
   overflow-y: scroll;
 
   border-collapse: collapse;
@@ -161,11 +161,6 @@ tr:nth-child(even){background-color: #f2f2f2}
 <body>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- <h2>Update</h2> -->
-<hr/>
-
-
-
-
 
 <div class="tabs-info-area">
         <div class="container">
