@@ -114,12 +114,12 @@ $(document).ready(function(){
 
 
 table {
-  width:80%; 
+  width:70%; 
   margin-left:15%; 
   margin-right:15%;
 
   display: block;
-  height: auto;
+  height: 400px;
   overflow-y: scroll;
 
   border-collapse: collapse;
@@ -176,7 +176,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                         </div>
                         <div class="widget-tabs-list" >
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home">User information</a></li>
+                                <li class="active"><a data-toggle="tab" href="#home"><?php echo $row['fname']; ?>s information</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
