@@ -4,6 +4,7 @@
   $user_id = $_GET['user_id'];
   include('conn.php');
 
+  $brow = "SELECT 'fname' FROM rfc_apply WHERE user_id ='$user_id'";
 
 
 
@@ -12,13 +13,11 @@
     $valueToSearh = $_POST['valueToSearh']; 
     $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
-    $brow = mysqli_fetch_array($nquery);
   }
   else
   {
     $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
-    $brow = mysqli_fetch_array($nquery);
   }
   
   function filterRecord($query)
