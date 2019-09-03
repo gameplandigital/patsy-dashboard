@@ -311,9 +311,11 @@ tr:nth-child(even){background-color: #f2f2f2}
                             while($row = mysqli_fetch_array($nquery)){
                             ?>
                             <tr class="odd gradeX">
+                                <th>User ID</th>
                                 <td><?php echo $row['user_id']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
+                                <th>First Name</th>
                                 <td><?php echo $row['fname']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
