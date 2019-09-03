@@ -111,7 +111,28 @@ $(document).ready(function(){
 
 
 <style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #2B60DE;}
+
+#customers tr:hover {background-color: #2B60DE;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #2B60DE;
+  color: white;
+}
 
 table {
   border-collapse: collapse;
@@ -121,7 +142,7 @@ table {
 }
 
 th, td {
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 
@@ -174,7 +195,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                                 <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
                                     <div class="tab-ctn" style="overflow-x:auto;">
                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" style="overflow-x:auto;">
-                        <tbody>
+                        <tbody id="customers">
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
                             ?>
