@@ -12,7 +12,7 @@
     $valueToSearh = $_POST['valueToSearh']; 
     $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
-    $row = mysqli_fetch_array($nquery);
+    $brow = mysqli_fetch_array($nquery);
   }
   else
   {
@@ -117,7 +117,7 @@ $(document).ready(function(){
 
 table {
   width:70%; 
-  margin-left:45%; 
+  margin-left:35%; 
   margin-right:15%;
 
   display: block;
