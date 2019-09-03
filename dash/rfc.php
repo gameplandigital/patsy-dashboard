@@ -65,7 +65,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM rfc_apply";
+      $sql="SELECT count(register_date) AS total FROM rfc_apply WHERE 1";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_Applicant=$values['total'];
