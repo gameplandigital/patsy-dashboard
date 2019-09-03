@@ -112,7 +112,7 @@ $(document).ready(function(){
 
     <style>
         table {
-        width:70%; 
+        width:30%; 
         margin-left:15%; 
         margin-right: auto;
 
@@ -178,7 +178,7 @@ $(document).ready(function(){
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active">
                                     <div class="tab-ctn">
-                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
+                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
                         <tbody>
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
