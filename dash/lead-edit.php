@@ -323,6 +323,19 @@ tr:nth-child(even){background-color: #f2f2f2}
                         </tbody>
                     </table>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
 
     <!-- Start Footer area-->
     <div class="footer-copyright-area">
@@ -340,4 +353,3 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 
 
-    
