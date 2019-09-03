@@ -65,10 +65,10 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM rfc_users WHERE BusinessTag= 'BUSINESS_LOAN'";
+      $sql="SELECT count(id) AS total FROM rfc_apply";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
-      $Total_Callback=$values['total'];
+      $Total_Applicant=$values['total'];
 
                               
       ?>
@@ -239,16 +239,8 @@ $empResult = mysqli_query($conn, $empSQL);
                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
-                            <p>Current Bot Subscriber</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_Callback; ?></span></h2>
-                            <p>Business Loans Visit</p>
+                            <h2><span class="counter"><?php echo $Total_Applicant; ?></span></h2>
+                            <p>Loan Applicants</p>
                         </div>
                     </div>
                 </div>
@@ -256,15 +248,15 @@ $empResult = mysqli_query($conn, $empSQL);
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
                             <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
-                            <p>Multi Loans Visit</p>
+                            <p>Phase two Subscriber</p>
                         </div>
                     </div>
                 </div>
                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
                         <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_Meeting; ?></span></h2>
-                            <p>Financing Loans Visit</p>
+                            <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
+                            <p>Total Bot Subscriber</p>
                         </div>
                     </div>
                 </div>
@@ -322,8 +314,7 @@ $empResult = mysqli_query($conn, $empSQL);
                         </div>
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#menu1">Overall User Transaction</a></li>
-                                 <li><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
+                                <li class="active"><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active">
