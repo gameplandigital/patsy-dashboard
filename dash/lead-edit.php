@@ -114,9 +114,9 @@ $(document).ready(function(){
 
 
 table {
-  /* width:70%; 
+  width:70%; 
   margin-left:15%; 
-  margin-right:15%; */
+  margin-right:15%;
 
   display: block;
   height: 300px;
@@ -181,7 +181,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
                                     <div class="tab-ctn" style="overflow-x:auto;">
-                                       <table cellpadding="0" cellspacing="0" style="text-align:center;" style="overflow-x:auto;">
+                                       <table cellpadding="0" cellspacing="0" style="overflow-x:auto;">
                         <tbody>
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
