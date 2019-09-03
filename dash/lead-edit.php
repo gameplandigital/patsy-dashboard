@@ -177,6 +177,9 @@ tr:nth-child(even){background-color: #f2f2f2}
                         <thead>
                             <tr>
                             <th>User ID</th>
+                            </tr>
+
+                            <tr>
                             <th>First Name</th>
                             <th>Middle Name</th>
                             <th>Last Name</th>
