@@ -180,134 +180,134 @@ tr:nth-child(even){background-color: #f2f2f2}
                             ?>
                             <center>
                             <tr class="odd gradeX">
-                                <th>User ID</th>
+                                <th>User ID:</th>
                                 <td><?php echo $row['user_id']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>First Name</th>
+                                <th>First Name:</th>
                                 <td><?php echo $row['fname']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Middle Name</th>
+                                <th>Middle Name:</th>
                                 <td><?php echo $row['mname']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Last Name</th>
+                                <th>Last Name:</th>
                                 <td><?php echo $row['lname']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Marital Status</th>
+                                <th>Marital Status:</th>
                                 <td><?php echo $row['marital_status']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Gender</th>
+                                <th>Gender:</th>
                                 <td><?php echo $row['gender']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Birthday</th>
+                                <th>Birthday:</th>
                                 <td><?php echo $row['birthday']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Educational Attainment</th>
+                                <th>Educational Attainment:</th>
                                 <td><?php echo $row['educ_attain']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Nationality</th>
+                                <th>Nationality:</th>
                                 <td><?php echo $row['nationality']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Address</th>
+                                <th>Address:</th>
                                 <td><?php echo $row['address']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Year Stay</th>
+                                <th>Year Stay:</th>
                                 <td><?php echo $row['year_stay']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Month stay</th>
+                                <th>Month stay:</th>
                                 <td><?php echo $row['month_stay']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Email</th>
+                                <th>Email:</th>
                                 <td><?php echo $row['email']; ?></td>
                             </tr>
                             <tr class="odd gradeX">                           
-                                <th>Mobile Number</th>
+                                <th>Mobile Number:</th>
                                 <td><?php echo $row['m_number']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Monthy Salary</th>
+                                <th>Monthy Salary:</th>
                                 <td><?php echo $row['monthly_salary']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Nature of Employment</th>
+                                <th>Nature of Employment:</th>
                                 <td><?php echo $row['nature_employment']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Sector</th>
+                                <th>Sector:</th>
                                 <td><?php echo $row['sector']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Position</th>
+                                <th>Position:</th>
                                 <td><?php echo $row['position']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Year(s) Employed</th>
+                                <th>Year(s) Employed:</th>
                                 <td><?php echo $row['years_employment']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Month(s) Employed</th>
+                                <th>Month(s) Employed:</th>
                                 <td><?php echo $row['months_employment']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Loan purpose</th>
+                                <th>Loan purpose:</th>
                                 <td><?php echo $row['loan_purpose']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Collateral Type</th>
+                                <th>Collateral Type:</th>
                                 <td><?php echo $row['collateral_type']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Tenure in months</th>
+                                <th>Tenure in months:</th>
                                 <td><?php echo $row['tenure_months']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Loan amount request</th>
+                                <th>Loan amount request:</th>
                                 <td><?php echo $row['loan_amount_request']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Source of information</th>
+                                <th>Source of information:</th>
                                 <td><?php echo $row['source_info']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Additional Income</th>
+                                <th>Additional Income:</th>
                                 <td><?php echo $row['addition_income']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Accepted the terms and conditions</th>
+                                <th>Accepted the terms and conditions:</th>
                                 <td><?php echo $row['terms_condition']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Latest I.D 1</th>
+                                <th>Latest I.D 1:</th>
                                 <td><a href="download.php?file=<?php echo $row['doc1']; ?>"><?php echo $row['doc1']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Latest I.D 2</th>
+                                <th>Latest I.D 2:</th>
                                 <td><a href="download.php?file=<?php echo $row['doc2']; ?>"><?php echo $row['doc2']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Latest Billing 1</th>
+                                <th>Latest Billing 1:</th>
                                 <td><a href="download.php?file=<?php echo $row['doc3']; ?>"><?php echo $row['doc3']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Latest Billing 2</th>
+                                <th>Latest Billing 2:</th>
                                 <td><a href="download.php?file=<?php echo $row['doc4']; ?>"><?php echo $row['doc4']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Date Get started</th>
+                                <th>Date Get started:</th>
                             <td><?php echo $row['register_date']; ?></td>     
                             <tr class="odd gradeX">
-                                <th>Date Registered</th>
+                                <th>Date Registered:</th>
                             <td><?php echo $row['register_date']; ?></td>                             
                                 </tr>
                             <?php } ?>
