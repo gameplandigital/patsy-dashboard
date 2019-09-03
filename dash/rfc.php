@@ -236,6 +236,15 @@ $empResult = mysqli_query($conn, $empSQL);
     <div class="notika-status-area">
         <center><div class="container">
             <div class="row">
+                <div class="col-lg-2 col-md-8 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="counter"></span></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
                 <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
                     <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                         <div class="website-traffic-ctn">
@@ -259,6 +268,15 @@ $empResult = mysqli_query($conn, $empSQL);
                             <p>Total Bot Subscriber</p>
                         </div>
                     </div>
+                </div>
+
+                <div class="col-lg-2 col-md-8 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span class="counter"></span></h2>
+                                <p></p>
+                            </div>
+                        </div>
                 </div>
             </div>
         </div></center>
