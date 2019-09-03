@@ -179,9 +179,9 @@ tr:nth-child(even){background-color: #f2f2f2}
                                 <li class="active"><a data-toggle="tab" href="#home">User information</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
-                                <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
-                                    <div class="tab-ctn" style="overflow-x:auto;">
-                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" style="overflow-x:auto;">
+                                <div id="home" class="tab-pane fade in active">
+                                    <div class="tab-ctn">
+                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                         <tbody>
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
