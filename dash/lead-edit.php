@@ -168,13 +168,9 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
-                            <h2>INFORMATION</h2>
+                            <h1><?php echo $brow['fname']; ?>Information</h1>
                             
                         </div>
-                        <div class="widget-tabs-list" >
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home"><?php echo $brow['fname']; ?>s Information</a></li>
-                            </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
                                     <div class="tab-ctn" style="overflow-x:auto;">
@@ -325,7 +321,6 @@ tr:nth-child(even){background-color: #f2f2f2}
             </div>
         </div>
     </div>
-</div>
 </div>
 
 
