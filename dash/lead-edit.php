@@ -114,8 +114,12 @@ $(document).ready(function(){
 
 
 table {
+  width:70%; 
+  margin-left:15%; 
+  margin-right:15%;
+
   display: block;
-  height: 500px;
+  height: 400px;
   overflow-y: scroll;
 
   border-collapse: collapse;
@@ -182,7 +186,6 @@ tr:nth-child(even){background-color: #f2f2f2}
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
                             ?>
-                            <center>
                             <tr class="odd gradeX">
                                 <th>User ID :</th>
                                 <td><?php echo $row['user_id']; ?></td>
