@@ -4,9 +4,7 @@
   $user_id = $_GET['user_id'];
   include('conn.php');
 
-  $bquery = "SELECT fname FROM rfc_apply WHERE user_id ='$user_id'";
-  $brow = filterRecord($bquery);
-
+  $brow = "SELECT fname FROM rfc_apply WHERE user_id ='$user_id'";
 
 
   if(isset($_POST['search']))
