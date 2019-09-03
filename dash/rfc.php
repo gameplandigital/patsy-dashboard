@@ -322,7 +322,7 @@ $empResult = mysqli_query($conn, $empSQL);
                         </div>
                         <div class="widget-tabs-list">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home">Overall User Transaction</a></li>
+                                <li class="active"><a data-toggle="tab" href="#menu1">Overall User Transaction</a></li>
                                  <li><a data-toggle="tab" href="#menu1">Loan Applicants</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
