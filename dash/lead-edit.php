@@ -114,12 +114,12 @@ $(document).ready(function(){
 
 
 table {
-  width:70%; 
+  width:80%; 
   margin-left:15%; 
   margin-right:15%;
 
   display: block;
-  height: 300px;
+  height: auto;
   overflow-y: scroll;
 
   border-collapse: collapse;
