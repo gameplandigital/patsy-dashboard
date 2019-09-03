@@ -178,7 +178,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                         </div>
                         <div class="widget-tabs-list" >
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home"><?php echo $brow['fname']; ?>s information</a></li>
+                                <li class="active"><a data-toggle="tab" href="#home"><?php echo $brow['fname']; ?>s Information</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
@@ -324,3 +324,20 @@ tr:nth-child(even){background-color: #f2f2f2}
                     </table>
 
 
+    <!-- Start Footer area-->
+    <div class="footer-copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-copy-right">
+                        <p>Copyright © 2019. All rights reserved. PATSY.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer area-->
+
+
+
+    
