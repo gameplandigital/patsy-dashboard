@@ -236,7 +236,7 @@ $empResult = mysqli_query($conn, $empSQL);
     <div class="notika-status-area">
         <center><div class="container">
             <div class="row">
-                <div class="col-md-3 col-md-8 col-sm-6 col-xs-12">
+                <div class="col-md-1 col-md-8 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span></span></h2>
@@ -270,7 +270,7 @@ $empResult = mysqli_query($conn, $empSQL);
                     </div>
                 </div>
 
-                <div class="col-md-3 col-md-8 col-sm-6 col-xs-12">
+                <div class="col-md-1 col-md-8 col-sm-6 col-xs-12">
                         <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
                             <div class="website-traffic-ctn">
                                 <h2><span></span></h2>
