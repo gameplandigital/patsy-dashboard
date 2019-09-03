@@ -181,8 +181,17 @@ tr:nth-child(even){background-color: #f2f2f2}
 
                             <tr>
                             <th>First Name</th>
+                            </tr>
+
+                            <tr>
                             <th>Middle Name</th>
+                            </tr>
+
+                            <tr>
                             <th>Last Name</th>
+                            </tr>
+
+                            <tr>
                             <th>Marital Status</th>
                             <th>Gender</th>
                             <th>Birthday</th>
