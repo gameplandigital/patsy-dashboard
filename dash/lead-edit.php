@@ -4,7 +4,9 @@
   $user_id = $_GET['user_id'];
   include('conn.php');
 
-  $brow = "SELECT fname FROM rfc_apply WHERE user_id ='$user_id'";
+  $bquery = "SELECT fname FROM rfc_apply WHERE user_id ='$user_id'";
+  $bbquery = filterRecord($bquery);
+  $brow = mysqli_fetch_array($bbquery);
 
 
   if(isset($_POST['search']))
@@ -115,7 +117,7 @@ $(document).ready(function(){
 
 table {
   width:70%; 
-  margin-left:30%; 
+  margin-left:28%; 
   margin-right:15%;
 
   display: block;
