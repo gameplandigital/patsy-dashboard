@@ -4,7 +4,8 @@
   $user_id = $_GET['user_id'];
   include('conn.php');
 
-  $brow = "SELECT 'fname' FROM rfc_apply WHERE user_id ='$user_id'";
+  $bquery = "SELECT fname FROM rfc_apply WHERE user_id ='$user_id'";
+  $brow = filterRecord($bquery);
 
 
 
@@ -116,7 +117,7 @@ $(document).ready(function(){
 
 table {
   width:70%; 
-  margin-left:35%; 
+  margin-left:30%; 
   margin-right:15%;
 
   display: block;
