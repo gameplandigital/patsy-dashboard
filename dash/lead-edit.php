@@ -12,11 +12,13 @@
     $valueToSearh = $_POST['valueToSearh']; 
     $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
+    $row = mysqli_fetch_array($nquery);
   }
   else
   {
     $query = "SELECT * FROM rfc_apply WHERE user_id ='$user_id'";
     $nquery = filterRecord($query);
+    $row = mysqli_fetch_array($nquery);
   }
   
   function filterRecord($query)
@@ -176,7 +178,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                         </div>
                         <div class="widget-tabs-list" >
                             <ul class="nav nav-tabs">
-                                <li class="active"><a data-toggle="tab" href="#home"><?php echo $nquery['fname']; ?>s information</a></li>
+                                <li class="active"><a data-toggle="tab" href="#home"><?php echo $row['fname']; ?>s information</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
                                 <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
