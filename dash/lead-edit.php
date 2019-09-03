@@ -126,6 +126,7 @@ table {
   border-spacing: 0;
   width: 50%;
   border: 1px solid #ddd;
+  align: center;
 }
 
 th, td {
