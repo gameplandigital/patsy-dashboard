@@ -193,32 +193,116 @@ tr:nth-child(even){background-color: #f2f2f2}
 
                             <tr>
                             <th>Marital Status</th>
+                            </tr>
+                            
+                            <tr>
                             <th>Gender</th>
+                            </tr>
+                            
+                            <tr>
                             <th>Birthday</th>
+                            </tr>
+                            
+                            <tr>
                             <th>Educational Attainment</th>
+                            </tr>
+                            
+                            <tr>
                             <th>Nationality</th>
+                            </tr>
+                            
+                            <tr>
                             <th>address</th>
+                            </tr>
+                            
+                            <tr>
                             <th>year_stay</th>
+                            </tr>
+                            
+                            <tr>
                             <th>month_stay</th>
+                            </tr>
+                            
+                            <tr>
                             <th>email</th>
+                            </tr>
+                            
+                            <tr>
                             <th>m_number</th>
+
+                            </tr>
+                            
+                            <tr>
                             <th>monthly_salary</th>
+                            </tr>
+                            
+                            <tr>
                             <th>nature_employment</th>
+                            </tr>
+                            
+                            <tr>
                             <th>sector</th>
+                            </tr>
+                            
+                            <tr>
                             <th>position</th>
+                            </tr>
+                            
+                            <tr>
                             <th>years_employment</th>
+                        
+                            </tr>
+                            
+                            <tr>
                             <th>months_employment</th>
+                        
+                            </tr>
+                            
+                            <tr>
                             <th>loan_purpose</th>
+                            </tr>
+                            
+                            <tr>
                             <th>collateral_type</th>
+                            </tr>
+                            
+                            <tr>
                             <th>tenure_months</th>
+                            </tr>
+                            
+                            <tr>
                             <th>loan_amount_request</th>
+                            </tr>
+
+                            <tr>
                             <th>source_info</th>
+                            </tr>
+                            
+                            <tr>
                             <th>addition_income</th>
+                            </tr>
+                            
+                            <tr>
                             <th>terms_condition</th>
+                            </tr>
+                            
+                            <tr>
                             <th>doc1</th>
+                            </tr>
+                            
+                            <tr>
                             <th>doc2</th>
+                            </tr>
+                            
+                            <tr>
                             <th>doc3</th>
+                            </tr>
+                            
+                            <tr>
                             <th>doc4</th>
+                            </tr>
+                            
+                            <tr>
                             <th>register_date</th>                            
                             </tr>
                         </thead>
@@ -227,37 +311,99 @@ tr:nth-child(even){background-color: #f2f2f2}
                             while($row = mysqli_fetch_array($nquery)){
                             ?>
                             <tr class="odd gradeX">
-                            <td><?php echo $row['user_id']; ?></td>
+                                <td><?php echo $row['user_id']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['fname']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['mname']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['lname']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['marital_status']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['gender']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['birthday']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['educ_attain']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['nationality']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['address']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['year_stay']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['month_stay']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['email']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['m_number']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['monthly_salary']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['nature_employment']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['sector']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['position']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['years_employment']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['months_employment']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['loan_purpose']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['collateral_type']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['tenure_months']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['loan_amount_request']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['source_info']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['addition_income']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['terms_condition']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><a href="download.php?file=<?php echo $row['doc1']; ?>"><?php echo $row['doc1']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><a href="download.php?file=<?php echo $row['doc2']; ?>"><?php echo $row['doc2']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><a href="download.php?file=<?php echo $row['doc3']; ?>"><?php echo $row['doc3']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><a href="download.php?file=<?php echo $row['doc4']; ?>"><?php echo $row['doc4']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
                                 <td><?php echo $row['register_date']; ?></td>                 
                                 </tr>
                             <?php } ?>
