@@ -110,54 +110,56 @@ $(document).ready(function(){
 <!-- HEADER -->
 
 
-    <style>
-        table {
-        width:30%; 
-        margin-left:15%; 
-        margin-right: auto;
+<style>
 
-        display: block;
-        height: 400px;
-        overflow-y: scroll;
 
-        border-collapse: collapse;
-        border-spacing: 0;
-        width: 100%;
-        border: 1px solid #ddd;
-        }
+table {
+  width:70%; 
+  margin-left:15%; 
+  margin-right:15%;
 
-        th, td {
-        text-align: left;
-        padding: 8px;
-        }
+  display: block;
+  height: 400px;
+  overflow-y: scroll;
 
-        tr:nth-child(even){background-color: #f2f2f2}
-    </style>
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
 
-    <div class="header-top-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                        <div class="logo-area">
-                            <a href="#"><img src="img/logo/logo.png" alt="" /></a>
-                        </div>
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+<div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="logo-area">
+                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
                     </div>
-                    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                        <div class="header-top-menu">
-                            <ul class="nav navbar-nav notika-top-nav">
-                            
-                            </ul>
-                        </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                    <div class="header-top-menu">
+                        <ul class="nav navbar-nav notika-top-nav">
+                           
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- END HEADER -->
+    </div>
+<!-- END HEADER -->
 
-    <body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <h2>Update</h2> -->
-    <hr/>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <h2>Update</h2> -->
+<hr/>
 
 
 
@@ -170,15 +172,16 @@ $(document).ready(function(){
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
                             <h2>INFORMATION</h2>
+                            
                         </div>
                         <div class="widget-tabs-list" >
                             <ul class="nav nav-tabs">
                                 <li class="active"><a data-toggle="tab" href="#home">User information</a></li>
                             </ul>
                             <div class="tab-content tab-custom-st">
-                                <div id="home" class="tab-pane fade in active">
-                                    <div class="tab-ctn">
-                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
+                                <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
+                                    <div class="tab-ctn" style="overflow-x:auto;">
+                                       <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example" style="overflow-x:auto;">
                         <tbody>
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
