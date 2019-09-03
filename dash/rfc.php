@@ -83,7 +83,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(id) AS total FROM rfc_users WHERE MultiTag= 'MULTI_PURPOSE_LOAN'";
+      $sql="SELECT count(apply_now) AS total FROM rfc_apply WHERE 1";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_InCorrect=$values['total'];
