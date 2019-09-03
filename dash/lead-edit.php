@@ -114,17 +114,17 @@ $(document).ready(function(){
 
 
 table {
-  width:70%; 
+  /* width:70%; 
   margin-left:15%; 
-  margin-right:15%;
+  margin-right:15%; */
 
   display: block;
-  height: 400px;
+  height: 300px;
   overflow-y: scroll;
 
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
+  width: 50%;
   border: 1px solid #ddd;
 }
 
