@@ -329,48 +329,6 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <div id="home" class="tab-pane fade in active">
                                     <div class="tab-ctn">
                                        <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
-                        <thead>
-                            <tr>
-                                <th>MessengerID</th>
-                                <th>Profile Link</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Transaction Date</th>
-                                <th>Currently Viewing</th>
-                    <!--            <th>Agent</th> -->
-                            
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            while($crow = mysqli_fetch_array($nquery)){
-                            ?>
-                            <tr class="odd gradeX">
-                                <td><?php echo $crow['MessengerId']; ?></td>
-                                <td><?php echo $crow['Profile_pic']; ?></td>
-                                <td><?php echo $crow['Fname']; ?></td>
-                                <td><?php echo $crow['Lname']; ?></td>
-                                <td><?php echo $crow['LastActive']; ?></td>
-                                <td><?php echo $crow['Tag']; ?></td>
-                                
-                                <!--  -->
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-
-
-                                    </div>
-                                    <div id="pagination_controls"><?php echo $paginationCtrls; ?></div>
-                                </div>
-
-
-
-
-                                
-                                <div id="menu1" class="tab-pane fade">
-                                    <div class="tab-ctn">
-                                      <table class="table " cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
                                 <thead>
                                 <tr>
                                 <th>MessengerID</th>
