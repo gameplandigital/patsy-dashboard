@@ -168,13 +168,13 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
-                            <h1><?php echo $brow['fname']; ?>- Information</h1>
+                            <h1><?php echo $brow['fname']; ?> - Information</h1>
                             
                         </div>
                             <div class="tab-content tab-custom-st">
-                                <div id="home" class="tab-pane fade in active" style="overflow-x:auto;">
-                                    <div class="tab-ctn" style="overflow-x:auto;">
-                                       <table cellpadding="0" cellspacing="0" style="overflow-x:auto;">
+                                <div id="home" class="tab-pane fade in active">
+                                    <div class="tab-ctn">
+                                       <table cellpadding="0" cellspacing="0">
                         <tbody>
                             <?php
                             while($row = mysqli_fetch_array($nquery)){
