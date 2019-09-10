@@ -322,8 +322,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <td><?php echo $emp['register_date']; ?></td>
                             
                                      <?php
-                                              <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">Archive</a>
-                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
+                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."' class="pull-right btn btn-primary btn-sm" id="btn-archive">View Details</a></td>";
                                      ?>
                                     
                     
