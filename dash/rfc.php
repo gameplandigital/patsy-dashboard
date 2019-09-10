@@ -315,7 +315,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 while($emp = mysqli_fetch_assoc($empResult)){
                                 ?>
                                 <tr>
-                                <th scope="row"><?php echo $emp['user_id']; ?></th>
+                                <td scope="row"><?php echo $emp['user_id']; ?></td>
                                 <td><?php echo $emp['fname']; ?></td>
                                 <td><?php echo $emp['mname']; ?></td>
                                 <td><?php echo $emp['lname']; ?></td>
@@ -331,7 +331,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 </tbody>
                                 </table>
 
-                                <nav aria-label="Page navigation">
+                                <nav aria-label="Page navigation" text-align="right">
                                     <ul class="pagination">
                                     <?php if($currentPage != $firstPage) { ?>
                                     <li class="page-item">
