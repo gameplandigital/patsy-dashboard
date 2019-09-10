@@ -117,12 +117,12 @@ $(document).ready(function(){
 
 table {
   width:90%; 
-  margin-left:88%; 
+  margin-left:28%; 
   margin-right:15%;
 
   display: block;
   height: 1000px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 
   border-collapse: collapse;
   border-spacing: 0;
