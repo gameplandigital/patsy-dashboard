@@ -168,7 +168,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="widget-tabs-int">
                         <div class="tab-hd">
-                            <h1><?php echo $brow['fname']; ?>aInformation</h1>
+                            <h1><?php echo $brow['fname']; ?>- Information</h1>
                             
                         </div>
                             <div class="tab-content tab-custom-st">
