@@ -83,7 +83,7 @@ $date=date('F j, Y g:i:a');
 
       $con = mysqli_connect($host, $username, $password, $database_name); 
 
-      $sql="SELECT count(apply_now) AS total FROM rfc_phase2_users WHERE 1";
+      $sql="SELECT count(BotTag) AS total FROM rfc_phase2_users WHERE 1";
       $result=mysqli_query($con,$sql);
       $values=mysqli_fetch_assoc($result);
       $Total_InCorrect=$values['total'];
