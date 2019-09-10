@@ -314,7 +314,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <?php
                                 while($emp = mysqli_fetch_assoc($empResult)){
                                 ?>
-                                <tr>
+                                <tr>><a href='lead-edit.php?user_id=".$emp['user_id']."'></a>
                                 <td scope="row"><?php echo $emp['user_id']; ?></td>
                                 <td><?php echo $emp['fname']; ?></td>
                                 <td><?php echo $emp['mname']; ?></td>
