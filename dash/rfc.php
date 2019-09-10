@@ -148,6 +148,22 @@ $empResult = mysqli_query($conn, $empSQL);
 
 <!doctype html>
 <html class="no-js" lang="ca">
+<style>
+#Row1 {
+  background: #c7c9d3;
+  color:#fff;
+  height:220px;
+  margin-top:15px;
+}
+
+#Row2 {
+  height:350px;
+  margin-top:15px;
+}
+.card{
+  border: 1px solid rgba(0, 0, 0, 0)!important;
+}
+</style>
 
 <head>
     <meta charset="utf-8">
@@ -232,56 +248,32 @@ $empResult = mysqli_query($conn, $empSQL);
 
     <br>
 
-       <!-- Start Status area -->
-    <div class="notika-status-area">
-        <center><div class="container">
-            <div class="row">
-                <div class="col-md-1 col-md-7 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                            <div class="website-traffic-ctn">
-                                <h2><span></span></h2>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-
-                <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_Applicant; ?></span></h2>
-                            <p>Loan Applicants</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
-                            <p>Phase two Subscriber</p>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
-                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
-                        <div class="website-traffic-ctn">
-                            <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
-                            <p>Total Bot Subscriber</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-1 col-md-7 col-sm-6 col-xs-12">
-                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
-                            <div class="website-traffic-ctn">
-                                <h2><span></span></h2>
-                                <p></p>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </div></center>
+    <div class="container-fluid"> 
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" id="Row1">
+          <h5 class="card-title">Chart Data</h5>
+          <p class="card-text" style="font-size:6em;text-align:center;margin-top:-20px">23%</p>
+        </div>
+      </div>
     </div>
-    <!-- End Status area-->
+        <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" id="Row1">
+          <h5 class="card-title">Status Data</h5>
+          <p class="card-text" style="font-size:6em;text-align:center;margin-top:-20px">-4.9%<i class="fa fa-arrow-down" aria-hidden="true"></i></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body" id="Row1">
+          <h5 class="card-title">New Data</h5>
+          <p class="card-text" style="font-size:6em;text-align:center;margin-top:-20px">54.3%</p>
+        </div>
+      </div>
+    </div>
 
 
 
