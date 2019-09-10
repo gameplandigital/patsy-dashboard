@@ -325,7 +325,7 @@ $empResult = mysqli_query($conn, $empSQL);
                             
                                      <?php
                                             //   <a href='lead-edit.php?user_id=".$emp['user_id']."' class="pull-right btn btn-primary btn-sm" id="btn-archive">View Details</a>
-                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."' class='pull-right btn btn-primary btn-sm' id='btn-archive'style='float: right;' />View Details</a></td>";
+                                    echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."' class='pull-right btn btn-primary btn-sm' id='btn-archive'style='float: left;' />View Details</a></td>";
                                      ?>
                                     
                     
