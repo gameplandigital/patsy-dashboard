@@ -314,7 +314,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <?php
                                 while($emp = mysqli_fetch_assoc($empResult)){
                                 ?>
-                                <tr>><a href='lead-edit.php?user_id=".$emp['user_id']."'></a>
+                                <tr>
                                 <td scope="row"><?php echo $emp['user_id']; ?></td>
                                 <td><?php echo $emp['fname']; ?></td>
                                 <td><?php echo $emp['mname']; ?></td>
@@ -322,6 +322,7 @@ $empResult = mysqli_query($conn, $empSQL);
                                 <td><?php echo $emp['register_date']; ?></td>
                             
                                      <?php
+                                              <a href="#" class="pull-right btn btn-primary btn-sm" id="btn-archive">Archive</a>
                                     echo "<td><a href='lead-edit.php?user_id=".$emp['user_id']."'><img src='./images/edit.png' alt='Edit'></a></td>";
                                      ?>
                                     
