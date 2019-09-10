@@ -209,26 +209,29 @@ $empResult = mysqli_query($conn, $empSQL);
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <!-- Start Header Top Area -->
-    <div class="header-top-area">
+    <!-- Mobile Menu start -->
+    <div class="mobile-menu-area">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="logo-area">
-                        <a href="#"><img src="img/logo/logo.png" alt="" /></a>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                    <div class="header-top-menu">
-                        <ul class="nav navbar-nav notika-top-nav">
-                           
-                        </ul>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul class="mobile-menu-nav">
+                                <li><a data-toggle="collapse" href="lead-edit.phprfc.php">Home</a>
+                                </li>
+                                <li><a data-toggle="collapse" href="lead-edit.php">Email</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- End Header Top Area -->
+    <!-- Mobile Menu end -->
+
+
+
 
     <br>
 
