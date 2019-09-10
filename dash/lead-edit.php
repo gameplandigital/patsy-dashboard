@@ -117,7 +117,7 @@ $(document).ready(function(){
 
 table {
   width:90%; 
-  margin-left:28%; 
+  margin-left:88%; 
   margin-right:15%;
 
   display: block;
