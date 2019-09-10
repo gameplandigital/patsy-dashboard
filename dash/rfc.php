@@ -148,43 +148,6 @@ $empResult = mysqli_query($conn, $empSQL);
 
 <!doctype html>
 <html class="no-js" lang="ca">
-<style>
-	.zmdi {
-		display: inline-block;
-		font-size: 1.35rem;
-		margin-right: 5px;
-		min-width: 25px;
-            }
-        }
-
-        .card-list {
-            @include clear();
-            width: 100%;
-        }
-
-        .card {
-            border-radius: 8px;
-            color: white;
-            padding: 10px;
-            position: relative;
-
-            .zmdi {
-                color: white;
-                font-size: 28px;
-                opacity: 0.3;
-                position: absolute;
-                right: 13px;
-                top: 13px;
-            }
-            
-            .stat {
-                border-top: 1px solid rgba(255, 255, 255, 0.3);
-                font-size: 8px;
-                margin-top: 25px;
-                padding: 10px 10px 0;
-                text-transform: uppercase;
-            }
-</style>
 
 <head>
     <meta charset="utf-8">
@@ -267,9 +230,66 @@ $empResult = mysqli_query($conn, $empSQL);
     </div>
     <!-- End Header Top Area -->
 
+    <br>
+
+       <!-- Start Status area -->
+    <div class="notika-status-area">
+        <center><div class="container">
+            <div class="row">
+                <div class="col-md-1 col-md-7 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span></span></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_Applicant; ?></span></h2>
+                            <p>Loan Applicants</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_InCorrect; ?></span></h2>
+                            <p>Phase two Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col-lg-3 col-md-8 col-sm-6 col-xs-12">
+                    <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30 dk-res-mg-t-30">
+                        <div class="website-traffic-ctn">
+                            <h2><span class="counter"><?php echo $Total_New; ?></span></h2>
+                            <p>Total Bot Subscriber</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-1 col-md-7 col-sm-6 col-xs-12">
+                        <div class="wb-traffic-inner notika-shadow sm-res-mg-t-30 tb-res-mg-t-30">
+                            <div class="website-traffic-ctn">
+                                <h2><span></span></h2>
+                                <p></p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div></center>
+    </div>
+    <!-- End Status area-->
 
 
 
+
+    <br>
+
+ 
+    <!-- Breadcomb area Start-->
     <div class="breadcomb-area">
         <div class="container">
             <div class="row">
