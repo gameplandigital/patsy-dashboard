@@ -121,7 +121,7 @@ table {
   margin-right:15%;
 
   display: block;
-  height: 1000px;
+  height: 600px;
   /* overflow-y: scroll; */
 
   border-collapse: collapse;
