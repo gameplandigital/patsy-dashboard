@@ -289,19 +289,19 @@ tr:nth-child(even){background-color: #f2f2f2}
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Latest I.D 1 :</th>
-                                <td><a href="<?php echo $row['doc1']; ?>"><?php echo $row['doc1']; ?></td>
+                                <td><a href="<?php echo $row['doc1']; ?>"><?php echo $row['id_1']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Latest I.D 2 :</th>
-                                <td><a href="download.php?file=<?php echo $row['doc2']; ?>"><?php echo $row['doc2']; ?></td>
+                                <td><a href="<?php echo $row['doc2']; ?>"><?php echo $row['id_2']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Latest Billing 1 :</th>
-                                <td><a href="download.php?file=<?php echo $row['doc3']; ?>"><?php echo $row['doc3']; ?></td>
+                                <td><a href="<?php echo $row['doc3']; ?>"><?php echo $row['bill_1']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Latest Billing 2 :</th>
-                                <td><a href="download.php?file=<?php echo $row['doc4']; ?>"><?php echo $row['doc4']; ?></td>
+                                <td><a href="<?php echo $row['doc4']; ?>"><?php echo $row['bill_2']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Date Get started :</th>
