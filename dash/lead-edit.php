@@ -289,7 +289,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Latest I.D 1 :</th>
-                                <td><a href="download.php?file=<?php echo $row['doc1']; ?>"><?php echo $row['doc1']; ?></td>
+                                <td><a href="<?php echo $row['doc1']; ?>"><?php echo $row['doc1']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Latest I.D 2 :</th>
