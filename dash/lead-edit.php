@@ -216,8 +216,16 @@ tr:nth-child(even){background-color: #f2f2f2}
                                 <td><?php echo $row['nationality']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
-                                <th>Address :</th>
-                                <td><?php echo $row['address']; ?></td>
+                                <th>Province :</th>
+                                <td><?php echo $row['province']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <th>City :</th>
+                                <td><?php echo $row['city']; ?></td>
+                            </tr>
+                            <tr class="odd gradeX">
+                                <th>Barangay :</th>
+                                <td><?php echo $row['barangay']; ?></td>
                             </tr>
                             <tr class="odd gradeX">
                                 <th>Year Stay :</th>
